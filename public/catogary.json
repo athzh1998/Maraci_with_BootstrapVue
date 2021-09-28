@@ -1,0 +1,22 @@
+[
+    {
+        "imgSource" : "../img/Catogary1.png",
+        "name":"إستئجار يخت",
+        "id": 1
+    },
+    {
+        "imgSource" : "../img/Catogary-2.png",
+        "name":"إستئجار قارب",
+        "id": 2
+    },
+    {
+        "imgSource" : "../img/Catogary-4.png",
+        "name":"رحلات بحرية",
+        "id": 3
+    },
+    {
+        "imgSource" : "../img/Catogary-3.png",
+        "name":"رحلات صيد",
+        "id": 4
+    }
+]
