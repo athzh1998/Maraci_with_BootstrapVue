@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <div id="nav" >
+  <div id="app" class="rtl">
+    <div id="nav">
       <top-header> </top-header>
     </div>
     <router-view />
@@ -8,15 +8,15 @@
 </template>
 
 <script>
-import TopHeader from '@/components/TopHeader.vue';
+import TopHeader from "@/components/TopHeader.vue";
 export default {
   components: {
-    'top-header' : TopHeader
-  }
-}
+    "top-header": TopHeader,
+  },
+};
 </script>
 
-    TopHeader
+TopHeader
 <style lang="scss">
 @import "~@/assets/scss/vendors/bootstrap-vue/index";
 #app {
@@ -25,23 +25,21 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #fff;
-   .container {
+  .container {
     max-width: 100%;
   }
-
 }
 
 #nav {
-   padding: 0;
-   background-color:#020111 ;
-
+  padding: 0;
+  background-color: #020111;
 
   a {
     color: white;
 
     &.router-link-exact-active {
       font-weight: bold;
-      color: #5BBAAE;
+      color: #5bbaae;
     }
   }
 }
