@@ -1,12 +1,12 @@
 <template>
-    <div class="p-2">
-        <b-col>
+    <div>
+        <b-col class="py-2">
             <b-card
                 :title="name"
                 :img-src="imgSource"
                 img-alt="Image"
                 overlay
-                class="card"
+                class="catogary"
                 >
             </b-card>
         </b-col>
