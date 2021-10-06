@@ -30,7 +30,7 @@
         </b-col>
         <b-col md='3' style="font-size:12px;" class="py-3">
           © 2021 Copyright: جميع الحقوق محفوظة لصالح
-          <a class="text-white" href="https://google.com/">موقع مراسي</a>
+          <a class="text-white" href="/">موقع مراسي</a>
         </b-col>
         <b-col md='2' class="justify-content-center">
           <b-list-group horizontal class="px-0 justify-content-around">

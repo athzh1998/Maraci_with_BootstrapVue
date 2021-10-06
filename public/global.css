@@ -104,6 +104,15 @@ p {
     min-height: calc(100vh);
   }
 
+  .blogImgViewMore{
+        background-image: url('img/Blog.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-background-size: cover;
+        background-size: cover;
+        height: calc(60vh);
+  }
+
 .sectionHeight{
     min-height: calc(100vh);
 }

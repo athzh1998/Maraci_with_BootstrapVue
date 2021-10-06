@@ -9,7 +9,7 @@
                 </b-row>
                 <b-card-text>
                     <p>{{blogText | shorten}}</p>
-                    <a class="showAll" :href="blogView(blogTitle,blogImgSrc,blogText, blogDatee)">إعرف أكثر</a>  
+                    <a class="showAll" href="/knowMoreAboutBlogs">إعرف أكثر</a>  
                 </b-card-text>
             </div>
         </b-card>
@@ -19,12 +19,7 @@
 <script>
 export default {
     name:'blogCards',
-    props:{
-        blogTitle: String,
-        blogImgSrc: String,
-        blogText: String, 
-        blogDatee: Date
-        },
+    props:["blogTitle","blogImgSrc","blogText", "blogDatee"],
     filters:{
         shorten:  function(v){
             if (v.length>200)
@@ -32,20 +27,7 @@ export default {
             else 
             return v;
             } 
-    },
-    methods: {
-        blogView: function(blogTitle,blogImgSrc,blogText, blogDatee){
-            return {
-                name: "knowMoreAboutBlogs",
-                params: {
-                title: blogTitle,
-                img: blogImgSrc,
-                text: blogText,
-                date: blogDatee
-                }
-            };
-        }
-}
+    }
 }
 </script>
 

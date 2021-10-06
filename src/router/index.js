@@ -5,6 +5,8 @@ import Login from "../views/login.vue";
 import Blogs from "../views/Blogs.vue";
 import CallUs from "../views/callUs.vue";
 import About from "../views/About.vue";
+import knowMoreAboutBlogs from "../views/knowMoreAboutBlogs.vue";
+import User from "@/layouts/Login.vue";
 
 Vue.use(VueRouter);
 
@@ -34,6 +36,14 @@ const routes = [
     name: 'CallUs',
     component: CallUs
   }
+  ,
+  {
+    path:'/blog/:title',
+    name: 'knowMoreAboutBlogs',
+    component: knowMoreAboutBlogs,
+    props: true
+  }
+  
 ];
 
 const router = new VueRouter({
