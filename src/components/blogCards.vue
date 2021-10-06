@@ -18,7 +18,16 @@
 
 <script>
 export default {
-    props:["blogTitle","blogImgSrc","blogText", "blogDatee"]
+    name:'blogCards',
+    props:["blogTitle","blogImgSrc","blogText", "blogDatee"],
+    filters:{
+        shorten:  function(v){
+            if (v.length>200)
+            return v.substring(0,200) +' ...';
+            else 
+            return v;
+            } 
+    }
 }
 </script>
 

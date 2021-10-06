@@ -20,13 +20,6 @@ import "bootstrap-v4-rtl/dist/css/bootstrap-rtl.css";
 import "/public/global.css";
 
 
-Vue.filter('shorten', function(v){
-  if (v.length>200)
-    return v.substring(0,200) +' ...';
-  else 
-    return v;
-}); 
-
 
 new Vue({
   router,

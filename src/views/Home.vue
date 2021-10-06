@@ -40,7 +40,7 @@
       <section class="sectionHeight">
         <b-container class="sectionsPadding">
           <b-row align-h="center" class="py-5">
-            <blog-card v-for="blogg in blogs" :key="blogg.id" :blogTitle="blogg.blogTitle" :blogImgSrc="blogg.blogImgSrc" :blogDatee="blogg.blogDatee" :blogText="blogg.blogText"></blog-card>
+            <blog-card v-for="blogg in blogs.slice(0,3)" :key="blogg.id" :blogTitle="blogg.blogTitle" :blogImgSrc="blogg.blogImgSrc" :blogDatee="blogg.blogDatee" :blogText="blogg.blogText"></blog-card>
           </b-row>
         </b-container>
         
