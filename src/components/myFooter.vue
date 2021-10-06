@@ -15,16 +15,16 @@
         <b-col md='4' class="justify-content-center">
           <b-list-group horizontal class=" justify-content-around border-0 px-0" style="font-size:18px; font-weight: bold;">
             <b-list-group-item class="bg-transparent border-0 px-0">
-              <a class="text-white" href="#!">الرئيسية</a>
+              <a class="text-white" href="/">الرئيسية</a>
             </b-list-group-item>
             <b-list-group-item class="bg-transparent border-0 px-0">
-              <a class="text-white" href="#!">من نحن</a>
+              <a class="text-white" href="/about">من نحن</a>
             </b-list-group-item >
             <b-list-group-item class="bg-transparent border-0 px-0">
-              <a class="text-white" href="#!">المدونة</a>
+              <a class="text-white" href="/Blogs">المدونة</a>
             </b-list-group-item>
             <b-list-group-item class="bg-transparent border-0 px-0"> 
-              <a class="text-white" href="#!">اتصل بنا</a>
+              <a class="text-white" href="/callUs">اتصل بنا</a>
             </b-list-group-item>
           </b-list-group>
         </b-col>
@@ -65,7 +65,7 @@
 </template>
 <script>
 export default {
-    
+  
 }
 </script>
 <style>

@@ -65,6 +65,7 @@ p {
     background-color: #014E57;
 }
 
+
 .cover-paraghraph{
     color: white;
     font-size: 20px;
@@ -85,7 +86,7 @@ p {
     padding: 0;
 }
 
-.view {
+.section1 {
     background-image: url('img/cover.png');
     background-repeat: no-repeat;
     background-color: #020111;
@@ -94,6 +95,22 @@ p {
     height: calc(100vh - 80px);
   }
 
+  .loginBG {
+    background-image: url('img/loginBG.png');
+    background-repeat: no-repeat;
+    background-color: #020111;
+    background-position: right center;
+    background-size: auto;
+    min-height: calc(100vh);
+  }
+
+.sectionHeight{
+    min-height: calc(100vh);
+}
+
+.blogs {
+    border: none;
+}
 
 .footerIcons{
     color: white;
@@ -103,7 +120,6 @@ p {
 }
 
 .catogary {
-    max-width: 240px; 
     height: auto;
     border-radius: 10px;
     color: white;
@@ -124,3 +140,8 @@ p {
     border: none;
     padding: 0%;
 }
+
+.sectionsPadding{
+    padding: 0 5.25rem;
+}
+

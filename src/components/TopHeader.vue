@@ -1,3 +1,4 @@
+
 <template>
   <div>
     <b-navbar toggleable="md" class="navbar-dark">
@@ -16,8 +17,8 @@
         <b-navbar-nav>
           <b-nav-item to="/">الرئيسية</b-nav-item>
           <b-nav-item to="/about">من نحن</b-nav-item>
-          <b-nav-item to="/about">المدونة</b-nav-item>
-          <b-button size="lg" class="my-3 my-sm-0" type="submit"
+          <b-nav-item to="/blogs">المدونة</b-nav-item>
+          <b-button @click="goToLogin()" size="lg" class="my-3 my-sm-0"
             >تسجيل الدخول</b-button
           >
         </b-navbar-nav>
@@ -26,5 +27,13 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  name:'topHeader',
+  methods: {
+    goToLogin(){
+      console.log("I am in the go to login method");
+      this.$router.push('/login'); 
+    }
+  }
+};
 </script>

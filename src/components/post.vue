@@ -1,16 +1,15 @@
 <template>
-    <div>
-        <b-col class="py-2">
+    <b-col md="3" class="p-2">
             <b-card
-                :title="name"
-                :img-src="imgSource"
-                img-alt="Image"
-                overlay
-                class="catogary"
-                >
-            </b-card>
-        </b-col>
-    </div>
+            :img-src="imgSource"
+            img-alt="Image"
+            overlay
+            class="catogary"
+            >
+            <b-card-title v-text="name" align-v="end">
+            </b-card-title>
+        </b-card>
+    </b-col>
 </template>
 <script>
 export default {

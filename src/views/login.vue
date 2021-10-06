@@ -1,159 +1,84 @@
 <template>
   <b-container class="loginBG">
     <b-row  align-h="center">
-      <b-col md='6' class="formBG">
+      <b-col md='6' class="loginForm">
         <img
             src="../../public/img/logo.png"
             alt="Maraci Logo"
             height="130px"
             width="auto"
           />
-          <div class="login-form">
+          <b-container class="Login">
             <b-row align-h="center">
-              <b-col md='8' sm='8'> 
-                <b-form v-if="login" class="login-form">
-                  <h3 class="mt-3">
-                    تسجيل الدخول
-                  </h3>
-                  <div class="p-2">
-                    <label for="phone-number" class="float-right">رقم الجوال</label>
-                    <b-form-input type="text" required></b-form-input>
-                  </div>
-                  <div class="p-2">
-                    <label for="password" class="float-right">الرقم السري</label>
-                    <b-form-input type="password" required></b-form-input>
-                  </div>
-                  <div class="d-flex justify-content-between p-2">
-                    <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">تذكرني</b-form-checkbox>
-                    <a href="#" @click="login=false; reset=true;">نسيت الرقم السري</a>
-                  </div>
-                  <div class="d-flex justify-content-between p-2">
-                    <b-button class="btn-secondary btnWidth" >سجل الدخول</b-button>
-                    <b-button @click="login=false; signup=true;" class="bg-transparent btn-outline-light btnWidth">إنشاء حساب</b-button>
-                  </div>
+              <b-col md="8">
+                <b-form
+                title="تسجيل الدخول"
+                 align-h="start"
+                 class="loginForm"
+                >
+                    <h3>تسجيل الدخول</h3>
+                    <b-form-group
+                        id="input-group-1"
+                        label="رقم الجوال"
+                        label-for="input-1"
+                        class="text-left"
+                    >
+                    <b-form-input
+                        id="input-1"
+                        type="text"
+                        placeholder=""
+                        required
+                    ></b-form-input>
+                    </b-form-group>
+                    <b-form-group
+                    id="input-group-2"
+                        label="الرقم السري"
+                        label-for="input-2"
+                        class="text-left"
+                    >
+                    <b-form-input
+                        id="input-2"
+                        type="password"
+                        required
+                    ></b-form-input>
+                    </b-form-group>
+                    <div>
+                    <b-form-checkbox value="me">تذكرني</b-form-checkbox>
+                    <a href="">نسيت كلمة المرور</a>
+                    </div>
+                    <b-row class="py-3" align-h="between">
+                    <b-col md=6>
+                        <b-button type="submit" class="btn-secondary">سجل الدخول</b-button>
+                    </b-col>
+                    <b-col md=6>
+                        <b-button type="reset" class="newAccount bg-transparent btn-outline-light">إنشاء الحساب</b-button>
+                    </b-col>
+                    </b-row>
                 </b-form>
 
-
-                <!---------------------------------------------------------------------->
-
-
-                <b-form v-if="signup" class="sign-up-form" >
-                  <h3 class="mt-3">
-                    إنشاء حساب
-                  </h3>
-                  <div class="p-2">
-                    <label for="user-name" class="float-right">الإسم</label>
-                    <b-form-input type="text" required></b-form-input>
-                  </div>
-                  <div class="p-2">
-                    <label for="phone-number" class="float-right">رقم الجوال</label>
-                    <b-form-input type="text" required></b-form-input>
-                  </div>
-                  <div class="p-2">
-                    <label for="password" class="float-right">الرقم السري</label>
-                    <b-form-input type="password" required></b-form-input>
-                  </div>
-                  <div class="d-flex justify-content-between p-2">
-                    <b-button class="btn-secondary btnWidth">إنشاء حساب</b-button>
-                    <a href="#" @click="login=true; signup=false;">لدي حساب بالفعل</a>
-                  </div>
-                </b-form>
-
-
-
-                <!---------------------------------------------------------------------->
-
-
-                <b-form v-if="reset" class="forgeten-password-form">
-                  <h3 class="mt-3">
-                    إستعادة كلمة المرور
-                  </h3>
-                  <div class="p-2">
-                    <label for="phone-number" class="float-right">رقم الجوال</label>
-                    <b-form-input type="text" required></b-form-input>
-                  </div>
-                  <div class="d-flex justify-content-between p-2">
-                    <b-button @click="reset=false; validation=true;" class="btn-secondary btnWidth">إستعادة</b-button>
-                    <a href="#" @click="login=true; reset=false;">إلغاء</a>
-                  </div>
-                </b-form>
-
-                
-
-                <!---------------------------------------------------------------------->
-
-
-                <b-form v-if="validation" class="Account-varification-form">
-                  <h3 class="mt-3">
-                    التحقق من الحساب
-                  </h3>
-                  <div class="p-2">
-                    <label for="phone-number" class="float-right">كود التحقق المرسل على رقم الجوال</label>
-                    <b-form-input type="text" required></b-form-input>
-                  </div>
-                  <div class="d-flex justify-content-between p-2">
-                    <b-button @click="validation=false; changePassword=true;" class="btn-secondary btnWidth">تحقق</b-button>
-                    <a href="#">timer</a>
-                    <a href="#">أعد ارساله مرة آخرى</a>
-                  </div>
-                </b-form>
-
-
-                <!---------------------------------------------------------------------->
-                
-
-
-                <b-form v-if="changePassword" class="change-password-form">
-                  <h3 class="mt-3">
-                    تغيير كلمة السر
-                  </h3>
-                  <div class="p-2">
-                    <label for="password" class="float-right"> الرقم السري الجديد</label>
-                    <b-form-input type="password" required></b-form-input>
-                  </div>
-                  <div class="p-2">
-                    <label for="password2" class="float-right">تأكيد الرقم السري الجديد</label>
-                    <b-form-input type="password" required></b-form-input>
-                  </div>
-                  <div class="d-flex justify-content-between p-2">
-                    <b-button @click="changePassword=false; login=true;" class="btn-secondary btnWidth">حفظ</b-button>
-                    <a href="#" @click="changePassword=false; login=true;">إلغاء</a>
-                  </div>
-                </b-form>
                 
               </b-col>
             </b-row>
-          </div>
+          </b-container>
+
+          <b-container class="SignUP" style="display: none;">
+              <h3>إنشاء حساب</h3>
+            </b-container>    
       </b-col>
     </b-row>
   </b-container>
 </template>
 
+<script src="../lib/script.js"></script>
+<script src="../lib/jquery-3.6.0.js"></script>
 <script>
-
-  export default {
-    data() {
-        return {
-          login: true,
-          signup: false,
-          validation: false,
-          changePassword: false,
-          reset:false,
-        };
-      },
-  }
+$(document).ready(function () {
+            $(".newAccount").click(function(){
+                $(".SignUP").show(400);
+                $(".Login").hide(300);
+            });
+  });
 </script>
-
 <style>
 
-.btnWidth{
-  width:40%;
-}
-
-.formBG {
-  background-color: rgb(0, 6, 22, 0.8);
-  border-radius: 30px;
-  padding: 4rem 0;
-  margin: 2rem;
-}
 </style>

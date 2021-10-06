@@ -1,33 +1,51 @@
 <template>
   <b-container>
-    <section class="w-100">
-      <cover></cover>
-    </section>
-    <section class="pb-4">
-        <section-header></section-header>
-        <h1>الفئات</h1>
-        <a class="showAllHeader" href="">عرض الكل</a>
-        <b-row class="p-4 m-4 d-flex justify-content-center">
-        <postCard v-for="catogary in Categories" :key="catogary.id" :name="catogary.name" :imgSource="catogary.imgSource"></postCard>
-      </b-row>
-    </section>
-
-
-    <section class="grayBG p-0">
-      <section-header></section-header>
-      <h1>المدونة</h1>
-      <a class="showAllHeader" href="">عرض الكل</a>
-      <blog></blog>
-    </section>
-
     <section>
-      <b-row align-h="center" class="px-4">
-      <blog-card v-for="blogg in blogs" :key="blogg.id" :blogTitle="blogg.blogTitle" :blogImgSrc="blogg.blogImgSrc" :blogDatee="blogg.blogDatee" :blogText="blogg.blogText"></blog-card>
-      </b-row>
-    </section>
+        <cover></cover>
+      </section>
 
-   
-    
+
+      <section class="sectionHeight">
+        <b-container class="sectionsPadding">
+          <section-header></section-header>
+          <h1>الفئات</h1>
+          <a class="showAllHeader" href="">عرض الكل</a>
+          <b-row align-h="center" class="py-5">
+            <postCard v-for="catogary in Categories" :key="catogary.id" :name="catogary.name" :imgSource="catogary.imgSource"></postCard>
+          </b-row>
+        </b-container>
+          
+      </section>
+
+
+      <section class="grayBG sectionHeight">
+        <b-container class="sectionsPadding">
+          <section-header></section-header>
+          <h1>المدونة</h1>
+          <a class="showAllHeader" href="">عرض الكل</a>
+          <b-row align-h="center" align-v="center" class="py-5">
+            <b-col md='7' sm="12">
+              <b-img src="img/Blog.png" fluid alt="Blog image" class="rounded-0"></b-img>
+            </b-col>
+            <b-col md='5'>
+              <h2>جزر فرسان</h2>
+              <p class="date">12 Sep 2021</p>
+              <p>حافظت “جزيرة فرسان” جنوب غربي السعودية طيلة الفترة الماضية على مكانتها في أن تكون بقعة من الضوء شاسعة في محيط البحر الأحمر، حين ضمت جزرها الواسعة معالم الدهشة على شواطئها ذات الرمال البيضاء، واحتوت كنوزا من اللؤلؤ في قلب العمق التاريخي الذي تحمله الجزيرة، كما لفتها غابات...</p>
+              <a class="showAll" href="">إعرف أكثر</a> 
+            </b-col>
+          </b-row>   
+        </b-container>     
+      </section>
+
+      <section class="sectionHeight">
+        <b-container class="sectionsPadding">
+          <b-row align-h="center" class="py-5">
+            <blog-card v-for="blogg in blogs" :key="blogg.id" :blogTitle="blogg.blogTitle" :blogImgSrc="blogg.blogImgSrc" :blogDatee="blogg.blogDatee" :blogText="blogg.blogText"></blog-card>
+          </b-row>
+        </b-container>
+        
+      </section>
+
   </b-container>
 </template>
 
@@ -37,7 +55,6 @@
 
 import post from '@/components/post.vue';
 import cover from '@/components/cover.vue';
-import blog from '@/components/blog.vue';
 import sectionHeader from '@/components/sectionHeader.vue';
 import blogCards from '@/components/blogCards.vue';
 
@@ -46,7 +63,6 @@ export default {
   components: {
     'postCard' : post ,
     'cover' : cover,
-    'blog' : blog ,
     'section-header' : sectionHeader,
     'blog-card' : blogCards
     },
@@ -79,8 +95,5 @@ export default {
 </script>
 
 <style>
-
-
-
 
 </style>
