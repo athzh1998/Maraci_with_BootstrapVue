@@ -6,7 +6,7 @@ import Blogs from "../views/Blogs.vue";
 import CallUs from "../views/callUs.vue";
 import About from "../views/About.vue";
 import knowMoreAboutBlogs from "../views/knowMoreAboutBlogs.vue";
-import User from "@/layouts/Login.vue";
+//import User from "@/layouts/Login.vue";
 
 Vue.use(VueRouter);
 
@@ -43,7 +43,7 @@ const routes = [
     component: knowMoreAboutBlogs,
     props: true
   }
-  
+
 ];
 
 const router = new VueRouter({
