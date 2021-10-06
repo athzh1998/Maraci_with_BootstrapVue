@@ -69,15 +69,8 @@
   </b-container>
 </template>
 
-<script src="../lib/script.js"></script>
-<script src="../lib/jquery-3.6.0.js"></script>
 <script>
-$(document).ready(function () {
-            $(".newAccount").click(function(){
-                $(".SignUP").show(400);
-                $(".Login").hide(300);
-            });
-  });
+
 </script>
 <style>
 
