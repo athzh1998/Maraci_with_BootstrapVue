@@ -1,4 +1,5 @@
 <template>
+<DashBoardLayout>
     <div class="sectionsPadding">
         <section-header></section-header>
         <h1>المدونة</h1>
@@ -15,9 +16,11 @@
           </b-row>
 
     </div>
+    </DashBoardLayout>
 </template>
 
 <script>
+import DashBoardLayout from '@/layouts/dashBoardLayout';
 import sectionHeader from '@/components/sectionHeader.vue';
 import blogCards from '@/components/blogCards.vue';
 
@@ -25,6 +28,7 @@ import blogCards from '@/components/blogCards.vue';
 export default {
   name: "Blogs",
   components: {
+    'DashBoardLayout': DashBoardLayout,
     'section-header' : sectionHeader,
     'blog-card' : blogCards
     },

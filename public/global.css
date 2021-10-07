@@ -92,7 +92,7 @@ p {
     background-color: #020111;
     background-position: right center;
     background-size: auto;
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
   }
 
   .loginBG {
@@ -132,6 +132,7 @@ p {
     height: auto;
     border-radius: 10px;
     color: white;
+     
 }
 
 
@@ -151,6 +152,8 @@ p {
 }
 
 .sectionsPadding{
-    padding: 0 5.25rem;
+    padding: 0 7%;
 }
+
+
 

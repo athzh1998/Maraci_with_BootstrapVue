@@ -1,4 +1,5 @@
 <template>
+<DashBoardLayout>
     <div class="sectionPadding sectionHeight">
         <section-header></section-header>
         <h1>اتصل بنا</h1>
@@ -13,13 +14,18 @@
             </b-col>
         </b-row>
     </div>
+    </DashBoardLayout>
 </template>
+
+
 <script>
+import DashBoardLayout from '@/layouts/dashBoardLayout';
 import sectionHeader from '@/components/sectionHeader.vue';
 
 export default {
   name: "CallUS",
   components: {
+    'DashBoardLayout': DashBoardLayout,
     'section-header' : sectionHeader,
     },
 }

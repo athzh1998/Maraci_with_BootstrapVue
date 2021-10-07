@@ -2,13 +2,12 @@
 <template>
   <div>
     <b-navbar toggleable="md" class="navbar-dark">
-          <b-navbar-brand href="#">
+          <b-navbar-brand href="/">
             <img
               src="../../public/img/logo.png"
               alt="Maraci Logo"
               height="70px"
               width="auto"
-              
             />
           
             
@@ -21,10 +20,12 @@
           <b-nav-item to="/about">من نحن</b-nav-item>
           <b-nav-item to="/blogs">المدونة</b-nav-item>
           <b-nav-item v-if="loggedIn">
-            <b-dropdown text="اسم المستخدم" variant="light" class="m-2 text-dark">
-              <b-dropdown-item href="#">لوحة التحكم</b-dropdown-item>
-              <b-dropdown-item href="#">تسجيل الخروج</b-dropdown-item>
+            <b-dropdown split text="اسم المستخدم" variant="light" style="width:200px">
+              <b-dropdown-item-button href="#" variant="Primary">لوحة التحكم</b-dropdown-item-button>
+              <b-dropdown-item-button href="#" class="">تسجيل الخروج</b-dropdown-item-button>
+
             </b-dropdown>
+           
           </b-nav-item>
           <b-nav-item v-else>
             <b-button @click="goToLogin()" size="lg" class="my-3 my-sm-0"
@@ -53,8 +54,12 @@ export default {
 </script>
 
 <style>
-
-.b-dropdown{
-  min-width: 255px;
+.dropdown-item{
+  color:#014E57 !important;
+  padding: 0.25rem 0rem;
+  font-size: 16px;
+  font-weight: unset;
 }
+
+
 </style>

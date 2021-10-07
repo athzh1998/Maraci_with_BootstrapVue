@@ -1,25 +1,11 @@
 <template>
   <div id="app" class="rtl">
-    <div id="nav">
-      <top-header></top-header>
-    </div>
     <router-view />
-    <div>
-      <my-footer></my-footer>
     </div>
-  </div>
 </template>
 
 <script>
-import TopHeader from "@/components/TopHeader.vue";
-import myFooter from '@/components/myFooter.vue';
 
-export default {
-  components: {
-    'top-header':TopHeader,
-    'my-footer' : myFooter
-  },
-};
 </script>
 
 <style lang="scss">

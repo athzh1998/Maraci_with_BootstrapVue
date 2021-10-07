@@ -1,4 +1,5 @@
 <template>
+<LoginAndSignUpLayout>
 <b-container class="loginBG">
   <b-row align-h="center">
     <b-col md='6' class="loginFormBackground my-5 pb-5">
@@ -165,11 +166,13 @@
       </b-row> 
     </b-col>
   </b-row>
+ 
 </b-container>
-  
+   </LoginAndSignUpLayout>
 </template>
 
 <script>
+import LoginAndSignUpLayout from '@/layouts/loginAndSignUpLayout';
 export default {
   name: 'login',
   data: function (){
@@ -181,6 +184,9 @@ export default {
       resetPassword:false
     };
     
+  }, 
+  components: {
+    'LoginAndSignUpLayout' : LoginAndSignUpLayout
   }
 }
 </script>

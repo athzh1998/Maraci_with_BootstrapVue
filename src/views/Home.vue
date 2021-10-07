@@ -1,4 +1,5 @@
 <template>
+<DashBoardLayout>
   <b-container>
     <section>
         <cover></cover>
@@ -47,12 +48,12 @@
       </section>
 
   </b-container>
+  </DashBoardLayout>
 </template>
 
 <script>
 // @ is an alias to /src
-
-
+import DashBoardLayout from '@/layouts/dashBoardLayout';
 import post from '@/components/post.vue';
 import cover from '@/components/cover.vue';
 import sectionHeader from '@/components/sectionHeader.vue';
@@ -61,6 +62,7 @@ import blogCards from '@/components/blogCards.vue';
 export default {
   name: "Home",
   components: {
+    'DashBoardLayout': DashBoardLayout,
     'postCard' : post ,
     'cover' : cover,
     'section-header' : sectionHeader,
@@ -95,5 +97,4 @@ export default {
 </script>
 
 <style>
-
 </style>

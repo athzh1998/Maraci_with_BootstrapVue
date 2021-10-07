@@ -8,7 +8,8 @@
                     <p v-text="blogDatee" class="date"></p>                
                 </b-row>
                 <b-card-text>
-                    <p>{{blogText | shorten}}</p>
+                    <p style="  text-align: justify;
+  text-justify: inter-word;">{{blogText | shorten}}</p>
                     <a class="showAll" :href="blogView(blogTitle,blogImgSrc,blogText, blogDatee)">إعرف أكثر</a>  
                 </b-card-text>
             </div>
@@ -23,7 +24,7 @@ export default {
         blogTitle: String,
         blogImgSrc: String,
         blogText: String, 
-        blogDatee: Date
+        blogDatee: String
         },
     filters:{
         shorten:  function(v){
