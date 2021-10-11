@@ -43,7 +43,7 @@ const routes = [
     component: CatogaryPage
   },
   {
-    path:'/Profile',
+    path:'/profile',
     name: 'Profile',
     component: Profile
   },

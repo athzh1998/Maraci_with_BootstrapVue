@@ -23,8 +23,8 @@
           <!--v-if and v-else -->
           <b-nav-item v-if="loggedIn">
             <b-dropdown split text="اسم المستخدم" variant="light" style="width:200px">
-              <b-dropdown-item-button to="/Profile" href="/Profile" >لوحة التحكم</b-dropdown-item-button>
-              <b-dropdown-item-button href="#" class="">تسجيل الخروج</b-dropdown-item-button>
+              <b-dropdown-item-button @click="goToProfile()">لوحة التحكم</b-dropdown-item-button>
+              <b-dropdown-item-button @click="signOut()">تسجيل الخروج</b-dropdown-item-button>
             </b-dropdown>
           </b-nav-item>
           <b-nav-item v-else>
@@ -42,9 +42,15 @@
 export default {
   name:'topHeader',
   methods: {
-    goToLogin(){
-      console.log("I am in the go to login method");
+    goToLogin: function(){
       this.$router.push('/login'); 
+    },
+    goToProfile: function(){
+      this.$router.push('/profile'); 
+    },
+    signOut: function(){
+      this.loggedIn=false;
+      this.$router.pop();
     }
   },
   data: function(){
