@@ -39,8 +39,10 @@
                 </div>
                   
                     <b-row align-h="between" class="pb-3" >
-                      <b-col><b-form-checkbox value="me">تذكرني</b-form-checkbox></b-col>
-                      <b-col><a href="#"  @click="login=false; forgetPassword=true;" class="text-left">نسيت الرقم السري</a></b-col>
+                      <b-col><div class="float-right"><b-form-checkbox value="me">تذكرني</b-form-checkbox></div></b-col>
+                      <b-col><div class="float-left">
+                                <a href="#" class="linksLogin" @click="login=false; forgetPassword=true;">نسيت الرقم السري</a>
+                            </div></b-col>
                     </b-row>
 
                     <b-row class="pb-3">
@@ -82,9 +84,11 @@
                     class="p-2"
                   ></b-form-input>
                 </div>
-                    <b-row class="pb-3" align-v="center" align-h="between">
-                      <b-col md='6'><b-button block >إنشاء حساب</b-button></b-col>
-                      <b-col md='6'><a href="#" class="text-left"  @click="login=true; signUp=false;">لدي حساب بالفعل</a></b-col>
+                    <b-row class="pt-2 pb-3" align-v="center" align-h="between">
+                      <b-col><b-button class="w-100">إنشاء حساب</b-button></b-col>
+                      <b-col><div class="float-left">
+                        <a href="#" class="linksLogin" @click="login=true; signUp=false;">لدي حساب بالفعل</a>
+                        </div></b-col>
                     </b-row>
               </b-form>
 
@@ -104,8 +108,10 @@
                 </div>
                 
                     <b-row class="pb-3" align-v="center" align-h="between">
-                      <b-col><b-button block @click="forgetPassword=false; resetPassword=true;">استعادة</b-button></b-col>
-                      <b-col><a href="" class="text-left"  @click="login=true; forgetPassword=false;">الغاء</a></b-col>
+                      <b-col><b-button block @click="forgetPassword=false; validation=true;">استعادة</b-button></b-col>
+                      <b-col><div class="float-left">
+                        <a href="" class="linksLogin"  @click="login=true; forgetPassword=false;">الغاء</a>
+                        </div></b-col>
                     </b-row>
               </b-form>
 
@@ -126,7 +132,7 @@
                 
                     <b-row class="pb-3" align-v="center" align-h="between">
                       <b-col><b-button block @click="resetPassword=true; validation=false;">تحقق</b-button></b-col>
-                      <b-col><a href="" class="text-left">اعد ارساله الى الجوال</a></b-col>
+                      <b-col><div class="float-left"><a href="#" class="linksLogin">اعد ارساله الى الجوال</a></div></b-col>
                     </b-row>
               </b-form>
 
@@ -156,7 +162,9 @@
                 
                     <b-row class="pb-3" align-v="center" align-h="between">
                       <b-col><b-button block @click="login=true; resetPassword=false;">حفظ</b-button></b-col>
-                      <b-col><a href="" class="text-left" @click="login=true; resetPassword=false;">الغاء</a></b-col>
+                      <b-col><div class="float-left">
+                        <a href="" class="linksLogin" @click="login=true; resetPassword=false;">الغاء</a>
+                        </div></b-col>
                     </b-row>
               </b-form>
 
@@ -195,7 +203,10 @@ export default {
   background-color: rgb(0, 6, 22, 0.8);
 }
 
-
+.linksLogin{
+  color:#9AD9C2;
+  text-decoration: underline;
+}
 .labelRight{
   display: flex;
 }

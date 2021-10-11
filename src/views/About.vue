@@ -1,6 +1,6 @@
 <template>
 <DashBoardLayout>
-  <div class="sectionsPadding">
+  <div class="sectionsPadding sectionHeight">
     <section-header></section-header>
     <h1>عن مراسي</h1>
     <b-row align-h="center">
@@ -25,7 +25,7 @@
                   <b-col>
                     <b-card-text class="text-white p-4">
                   <h3 >المدونة</h3>
-                  <p class="text-white text-left">
+                  <p class="text-white text-justify">
                             هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
                   </p>
                 </b-card-text>
@@ -47,7 +47,7 @@
                   <b-col>
                     <b-card-text class="text-white p-4">
                   <h3 >الرسالة</h3>
-                  <p class="text-white text-left">
+                  <p class="text-white text-justify">
                             هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
                   </p>
                 </b-card-text>

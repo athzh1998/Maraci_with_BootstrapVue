@@ -1,6 +1,6 @@
 <template>
 <DashBoardLayout>
-    <div class="sectionsPadding">
+    <div class="sectionsPadding sectionHeight">
         <section-header></section-header>
         <h1>المدونة</h1>
         <b-row align-h="center">

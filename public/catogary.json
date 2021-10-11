@@ -1,22 +1,32 @@
 [
     {
-        "imgSource" : "../img/Catogary1.png",
-        "name":"إستئجار يخت",
+        "imgSource" : "../img/imgCover.png",
+        "name":"رحلة 1",
         "id": 1
     },
     {
-        "imgSource" : "../img/Catogary-2.png",
-        "name":"إستئجار قارب",
+        "imgSource" :"../img/imgCover.png",
+        "name":"رحلة 2",
         "id": 2
     },
     {
-        "imgSource" : "../img/Catogary-4.png",
-        "name":"رحلات بحرية",
+        "imgSource" :"../img/imgCover.png",
+        "name":"رحلة 3",
         "id": 3
     },
     {
-        "imgSource" : "../img/Catogary-3.png",
-        "name":"رحلات صيد",
+        "imgSource" : "../img/imgCover.png",
+        "name":"رحلة 4",
+        "id": 4
+    },
+    {
+        "imgSource" : "../img/imgCover.png",
+        "name":"رحلة 4",
+        "id": 4
+    },
+    {
+        "imgSource" : "../img/imgCover.png",
+        "name":"رحلة 4",
         "id": 4
     }
 ]

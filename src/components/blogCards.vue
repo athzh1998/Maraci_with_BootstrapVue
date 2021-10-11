@@ -1,16 +1,16 @@
 <template>
     <b-col md="4" class="pb-3">
-        <b-card class="text-dark text-left blogs">
+        <b-card class="text-dark text-left border-0">
             <b-card-img :src="blogImgSrc" alt="Blog img" img-top class="blog-img pb-3"></b-card-img> 
             <div class="px-3">
-                <b-row align-h="between">
-                    <b-card-title v-text="blogTitle"></b-card-title>
-                    <p v-text="blogDatee" class="date"></p>                
+                <b-row class="justify-content-between">
+                    <b-col><b-card-title v-text="blogTitle"></b-card-title></b-col>
+                    <b-col><div class="date float-left">{{blogDatee}}</div><br></b-col>            
                 </b-row>
                 <b-card-text>
-                    <p style="  text-align: justify;
-  text-justify: inter-word;">{{blogText | shorten}}</p>
-                    <a class="showAll" :href="blogView(blogTitle,blogImgSrc,blogText, blogDatee)">إعرف أكثر</a>  
+                    <p class="text-justify">{{blogText | shorten}} 
+                        <a class="showAll" href="/knowMoreAboutBlogs"> إعرف أكثر</a>
+                    </p>  <!--:to="{name:'knowMoreAboutBlogs', params:{id}}"-->
                 </b-card-text>
             </div>
         </b-card>
@@ -20,12 +20,7 @@
 <script>
 export default {
     name:'blogCards',
-    props:{
-        blogTitle: String,
-        blogImgSrc: String,
-        blogText: String, 
-        blogDatee: String
-        },
+    props:['id','blogTitle','blogImgSrc','blogText','blogDatee'],
     filters:{
         shorten:  function(v){
             if (v.length>200)
@@ -35,18 +30,8 @@ export default {
             } 
     },
     methods: {
-        blogView: function(blogTitle,blogImgSrc,blogText, blogDatee){
-            return {
-                name: "knowMoreAboutBlogs",
-                params: {
-                title: blogTitle,
-                img: blogImgSrc,
-                text: blogText,
-                date: blogDatee
-                }
-            };
-        }
-}
+        
+    }
 }
 </script>
 

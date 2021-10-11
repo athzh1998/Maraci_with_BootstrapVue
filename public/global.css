@@ -58,6 +58,7 @@ p {
 .showAll {
     color: #343434;
     text-decoration: underline;
+    
 }
 
 .btn-secondary {
@@ -104,22 +105,12 @@ p {
     min-height: calc(100vh);
   }
 
-  .blogImgViewMore{
-        background-image: url('img/Blog.png');
-        background-repeat: no-repeat;
-        background-position: center center;
-        -webkit-background-size: cover;
-        background-size: cover;
-        height: calc(60vh);
-  }
+  
 
 .sectionHeight{
     min-height: calc(100vh);
 }
 
-.blogs {
-    border: none;
-}
 
 .footerIcons{
     color: white;
@@ -132,13 +123,8 @@ p {
     height: auto;
     border-radius: 10px;
     color: white;
-     
 }
 
-
-.blogs {
-    border: none;
-}
 
 .blog-img {
     border-radius: 25px;
@@ -154,6 +140,5 @@ p {
 .sectionsPadding{
     padding: 0 7%;
 }
-
 
 

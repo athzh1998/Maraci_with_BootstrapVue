@@ -6,6 +6,8 @@ import Blogs from "../views/Blogs.vue";
 import CallUs from "../views/callUs.vue";
 import About from "../views/About.vue";
 import knowMoreAboutBlogs from "../views/knowMoreAboutBlogs.vue";
+import CatogaryPage from "../views/catogaryPage.vue";
+import Profile from "../views/Profile.vue";
 
 Vue.use(VueRouter);
 
@@ -35,9 +37,19 @@ const routes = [
     name: 'CallUs',
     component: CallUs
   },
+  {
+    path:'/catogaryPage',
+    name: 'CatogaryPage',
+    component: CatogaryPage
+  },
+  {
+    path:'/Profile',
+    name: 'Profile',
+    component: Profile
+  },
 
   {
-    path:'/blog/:title',
+    path:'/knowMoreAboutBlogs',
     name: 'knowMoreAboutBlogs',
     component: knowMoreAboutBlogs,
     props: true

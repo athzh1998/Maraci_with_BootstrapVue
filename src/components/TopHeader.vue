@@ -16,21 +16,23 @@
 
       <b-collapse id="nav-collapse" is-nav class="justify-content-end px-2">
         <b-navbar-nav>
-          <b-nav-item to="/">الرئيسية</b-nav-item>
+          <b-nav-item to="/" >الرئيسية</b-nav-item>
           <b-nav-item to="/about">من نحن</b-nav-item>
           <b-nav-item to="/blogs">المدونة</b-nav-item>
+
+          <!--v-if and v-else -->
           <b-nav-item v-if="loggedIn">
             <b-dropdown split text="اسم المستخدم" variant="light" style="width:200px">
-              <b-dropdown-item-button href="#" variant="Primary">لوحة التحكم</b-dropdown-item-button>
+              <b-dropdown-item-button to="/Profile" href="/Profile" >لوحة التحكم</b-dropdown-item-button>
               <b-dropdown-item-button href="#" class="">تسجيل الخروج</b-dropdown-item-button>
-
             </b-dropdown>
-           
           </b-nav-item>
           <b-nav-item v-else>
-            <b-button @click="goToLogin()" size="lg" class="my-3 my-sm-0"
+            <b-button to="/login" size="lg" class="m-0 my-sm-0"
             >تسجيل الدخول</b-button>
           </b-nav-item>
+          <!--end v-if and v-else-->
+
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -60,6 +62,5 @@ export default {
   font-size: 16px;
   font-weight: unset;
 }
-
 
 </style>
