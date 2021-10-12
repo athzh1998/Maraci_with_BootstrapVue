@@ -20,41 +20,40 @@ const routes = [
   {
     path: "/about",
     name: "About",
-    component: About
+    component: About,
   },
   {
-    path:'/Blogs',
-    name: 'blog',
-    component: Blogs
+    path: "/Blogs",
+    name: "blog",
+    component: Blogs,
   },
   {
-    path:'/login',
-    name: 'login',
-    component: Login
+    path: "/login",
+    name: "login",
+    component: Login,
   },
   {
-    path:'/callUs',
-    name: 'CallUs',
-    component: CallUs
+    path: "/callUs",
+    name: "CallUs",
+    component: CallUs,
   },
   {
-    path:'/catogaryPage',
-    name: 'CatogaryPage',
-    component: CatogaryPage
+    path: "/catogaryPage",
+    name: "CatogaryPage",
+    component: CatogaryPage,
   },
   {
-    path:'/profile',
-    name: 'Profile',
-    component: Profile
+    path: "/profile",
+    name: "Profile",
+    component: Profile,
   },
 
   {
-    path:'/knowMoreAboutBlogs',
-    name: 'knowMoreAboutBlogs',
+    path: "/knowMoreAboutBlogs",
+    name: "knowMoreAboutBlogs",
     component: knowMoreAboutBlogs,
-    props: true
-  }
-
+    props: true,
+  },
 ];
 
 const router = new VueRouter({

@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <div id="nav">
@@ -11,16 +10,16 @@
       <my-footer></my-footer>
     </div>
   </div>
-  </template>
+</template>
 
 <script>
-    import TopHeader from "@/components/TopHeader.vue";
-    import myFooter from '@/components/myFooter.vue';
+import TopHeader from "@/components/TopHeader.vue";
+import myFooter from "@/components/myFooter.vue";
 
-    export default {
-    components: {
-        'top-header':TopHeader,
-        'my-footer' : myFooter
-    },
-    };
+export default {
+  components: {
+    "top-header": TopHeader,
+    "my-footer": myFooter,
+  },
+};
 </script>

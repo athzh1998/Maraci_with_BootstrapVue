@@ -37,6 +37,29 @@
                 </div>
               </b-col>
 
+          <b-col md="4">
+            <div class="darkenBackground p-2 pb-3 w-100">
+              <b-list-group
+                horizontal
+                class="bg-transparent border-0 justify-content-between p-0"
+              >
+                <b-list-group-item class="bg-transparent border-0"
+                  ><h5>الرحلات المفضلة</h5></b-list-group-item
+                >
+                <b-list-group-item class="bg-transparent border-0"
+                  ><a href=""
+                    ><b-icon
+                      class="h5 text-white"
+                      icon="arrow-left-circle"
+                      aria-hidden="true"
+                    ></b-icon></a
+                ></b-list-group-item>
+              </b-list-group>
+              <div>
+                <p class="text-white" style="font-size: 60px">4</p>
+              </div>
+            </div>
+          </b-col>
 
               <b-col md='4'  class="pb-4">
                 <div class="darkenBackground p-2 pb-3 w-100">
@@ -148,13 +171,12 @@
           
           </b-modal>
       </b-container>
-        
     </div>
 </DashBoardLayout>
     
 </template>
 <script>
-import DashBoardLayout from '@/layouts/dashBoardLayout';
+import DashBoardLayout from "@/layouts/dashBoardLayout";
 export default {
   name: "Profile",
   components: {
