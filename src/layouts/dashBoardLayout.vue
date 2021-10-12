@@ -4,9 +4,9 @@
     <div id="nav">
       <top-header></top-header>
     </div>
-    <v-content>
+    <div>
     <slot/>
-    </v-content>
+    </div>
     <div>
       <my-footer></my-footer>
     </div>
