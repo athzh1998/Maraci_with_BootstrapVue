@@ -17,9 +17,7 @@ Vue.use(IconsPlugin);
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import "bootstrap-v4-rtl/dist/css/bootstrap-rtl.css";
-import "/public/global.css";
-
-
+import "@/assets/css/global.css";
 
 new Vue({
   router,
