@@ -11,7 +11,7 @@
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-      <b-collapse id="nav-collapse" is-nav class="justify-content-end px-2">
+      <b-collapse id="nav-collapse" is-nav class="justify-content-end align-items-center px-2">
         <b-navbar-nav>
           <b-nav-item to="/">الرئيسية</b-nav-item>
           <b-nav-item to="/about">من نحن</b-nav-item>
@@ -19,22 +19,17 @@
 
           <!--v-if and v-else -->
           <b-nav-item v-if="loggedIn">
-            <b-dropdown
-              split
-              text="اسم المستخدم"
-              variant="light"
-              style="width: 200px"
-            >
-              <b-dropdown-item-button @click="goToProfile()"
-                >لوحة التحكم</b-dropdown-item-button
-              >
-              <b-dropdown-item-button @click="signOut()"
-                >تسجيل الخروج</b-dropdown-item-button
-              >
-            </b-dropdown>
+            <div class="px-3">
+            <select id='topHeaderID' class="topHeaderDropdown" @change="changeFunc();">
+             <b-icon icon="chevron-down" class="icons"></b-icon>
+              <option disabled selected>{{userName}}</option>
+              <option value="1">لوحة التحكم</option>
+              <option value="2">تسجيل الخروج</option>
+            </select>
+          </div>
           </b-nav-item>
           <b-nav-item v-else>
-            <b-button to="/login" size="lg" class="m-0 my-sm-0"
+            <b-button to="/login" size="lg" class="btn-secondary"
               >تسجيل الدخول</b-button
             >
           </b-nav-item>
@@ -45,33 +40,50 @@
   </div>
 </template>
 <script>
+
 export default {
   name: "topHeader",
   methods: {
-    goToLogin: function () {
-      this.$router.push("/login");
-    },
-    goToProfile: function () {
-      this.$router.push("/profile");
-    },
-    signOut: function () {
-      this.loggedIn = false;
-      this.$router.pop();
+    changeFunc: function(){
+      var selectBox = document.getElementById("topHeaderID");
+      var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+      //alert(selectedValue);
+      if(selectedValue=='1'){
+        this.$router.push("/profile");
+      }
+      else if(selectedValue=='2') {
+        this.loggedIn = false;
+        this.$router.push("/");
+      }
     },
   },
   data: function () {
     return {
       loggedIn: true,
+      userName: 'أثير حسن'
     };
   },
 };
 </script>
 
 <style>
-.dropdown-item {
-  color: #014e57 !important;
-  padding: 0.25rem 0rem;
-  font-size: 16px;
-  font-weight: unset;
+.topHeaderDropdown{
+  width: 255px;
+  padding: 8px 12px;
+  color: #026873;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.topHeaderDropdown:focus,
+.topHeaderDropdown:hover {
+  outline:none;
+  border: 1px solid #3c776f;
+  
+}
+
+.topHeaderDropdown option{
+  border:none;
 }
 </style>

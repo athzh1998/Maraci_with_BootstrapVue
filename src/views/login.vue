@@ -20,7 +20,7 @@
                   <br />
                   <br />
                   <div class="pb-3">
-                    <label for="phone" class="labelRight">رقم الجوال</label>
+                    <label for="phone" class="d-flex">رقم الجوال</label>
                     <b-form-input
                       id="phone"
                       type="text"
@@ -28,7 +28,7 @@
                     ></b-form-input>
                   </div>
                   <div class="pb-3">
-                    <label for="password" class="labelRight">الرقم السري</label>
+                    <label for="password" class="d-flex">الرقم السري</label>
                     <b-form-input
                       id="password"
                       type="password"
@@ -58,7 +58,7 @@
                   </b-row>
 
                   <b-row class="pb-3">
-                    <b-col><b-button block>تسجيل الدخول</b-button></b-col>
+                    <b-col><b-button block class="btn-secondary">تسجيل الدخول</b-button></b-col>
                     <b-col
                       ><b-button
                         block
@@ -80,7 +80,7 @@
                   <br />
                   <br />
                   <div class="pb-3">
-                    <label for="name" class="labelRight">الاسم</label>
+                    <label for="name" class="d-flex">الاسم</label>
                     <b-form-input
                       id="name"
                       type="text"
@@ -88,7 +88,7 @@
                     ></b-form-input>
                   </div>
                   <div class="pb-3">
-                    <label for="phone" class="labelRight">رقم الجوال</label>
+                    <label for="phone" class="d-flex">رقم الجوال</label>
                     <b-form-input
                       id="phone"
                       type="text"
@@ -96,7 +96,7 @@
                     ></b-form-input>
                   </div>
                   <div class="pb-3">
-                    <label for="password" class="labelRight">الرقم السري</label>
+                    <label for="password" class="d-flex">الرقم السري</label>
                     <b-form-input
                       id="password"
                       type="password"
@@ -104,7 +104,7 @@
                     ></b-form-input>
                   </div>
                   <b-row class="pt-2 pb-3" align-v="center" align-h="between">
-                    <b-col><b-button class="w-100">إنشاء حساب</b-button></b-col>
+                    <b-col><b-button class="btn-secondary">إنشاء حساب</b-button></b-col>
                     <b-col
                       ><div class="float-left">
                         <a
@@ -128,7 +128,7 @@
                   <br />
                   <br />
                   <div class="pb-3">
-                    <label for="phone" class="labelRight">رقم الجوال</label>
+                    <label for="phone" class="d-flex">رقم الجوال</label>
                     <b-form-input
                       id="phone"
                       type="text"
@@ -139,6 +139,7 @@
                   <b-row class="pb-3" align-v="center" align-h="between">
                     <b-col
                       ><b-button
+                      class="btn-secondary"
                         block
                         @click="
                           forgetPassword = false;
@@ -156,8 +157,7 @@
                             login = true;
                             forgetPassword = false;
                           "
-                          >الغاء</a
-                        >
+                          >الغاء</a>
                       </div></b-col
                     >
                   </b-row>
@@ -170,7 +170,7 @@
                   <br />
                   <br />
                   <div class="pb-3">
-                    <label for="code" class="labelRight"
+                    <label for="code" class="d-flex"
                       >كود التحقق المرسل على رقم الجوال</label
                     >
                     <b-form-input
@@ -183,6 +183,7 @@
                   <b-row class="pb-3" align-v="center" align-h="between">
                     <b-col
                       ><b-button
+                      class="btn-secondary"
                         block
                         @click="
                           resetPassword = true;
@@ -206,7 +207,7 @@
                   <br />
                   <br />
                   <div class="pb-3">
-                    <label for="newPassword" class="labelRight"
+                    <label for="newPassword" class="d-flex"
                       >الرقم السري الجديد</label
                     >
                     <b-form-input
@@ -217,7 +218,7 @@
                   </div>
 
                   <div class="pb-3">
-                    <label for="newPassword2" class="labelRight"
+                    <label for="newPassword2" class="d-flex"
                       >تأكيد الرقم السري الجديد</label
                     >
                     <b-form-input
@@ -230,6 +231,7 @@
                   <b-row class="pb-3" align-v="center" align-h="between">
                     <b-col
                       ><b-button
+                      class="btn-secondary"
                         block
                         @click="
                           login = true;
@@ -288,8 +290,5 @@ export default {
 .linksLogin {
   color: #9ad9c2;
   text-decoration: underline;
-}
-.labelRight {
-  display: flex;
 }
 </style>

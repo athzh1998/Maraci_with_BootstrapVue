@@ -1,7 +1,7 @@
 <template>
   <DashBoardLayout>
     <b-container class="sectionsPadding">
-      <b-row class="pb-5" style="min-height: calc(100vh - 120px)">
+      <b-row class="pb-5" style="min-height: calc(100vh - 120px)" >
         <b-col md="6" class="pt-4">
           <b-img
             src="@/assets/img/imgCover.png"
@@ -12,77 +12,31 @@
         </b-col>
         <b-col md="6">
           <section-header-tall></section-header-tall>
-          <h1>إستئجار يخت</h1>
+          <div class="py-md-5">
+            <h1>إستئجار يخت</h1>
           <br />
-          <h5 class="text-justify text-dark">
+          <h5 class="text-justify">
             هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
             النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد
             من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
           </h5>
+          </div>
+          
         </b-col>
       </b-row>
-      <b-row class="pt-5">
-        <b-col md="3">
-          <div>
-            <b-dropdown
-              split
-              text="المدينة: "
-              variant="light"
-              class="my-2 w-100"
-            >
-              <b-dropdown-item href="#">جدة</b-dropdown-item>
-              <b-dropdown-item href="#">ينبع</b-dropdown-item>
-            </b-dropdown>
-          </div>
-        </b-col>
-        <b-col md="3">
-          <div>
-            <b-dropdown
-              split
-              text="ترتيب بحسب: "
-              variant="light"
-              class="my-2 w-100"
-            >
-              <b-dropdown-item href="#">المضاف حديثاً</b-dropdown-item>
-              <b-dropdown-item href="#">الأقل سعراً</b-dropdown-item>
-              <b-dropdown-item href="#">الأعلى سعراً</b-dropdown-item>
-              <b-dropdown-item href="#">العروض</b-dropdown-item>
-            </b-dropdown>
-          </div>
-        </b-col>
-        <b-col md="3">
-          <div class="dropdown">
-            <span>Mouse over me</span>
-            <div class="dropdown-content">
-              <p>Hello World!</p>
-            </div>
-          </div>
-        </b-col>
 
-        <b-col md="3" class="ml">
-          <b-input-group class="my-2 w-100">
-            <b-form-input class="LoginInput" size="sm" placeholder="ابحث هنا">
-            </b-form-input>
-            <b-input-group-prepend>
-              <span class="input-group-text" size="sm">
-                <b-icon
-                  icon="search"
-                  aria-hidden="true"
-                  class="btn p-0"
-                  variant="Secondary"
-                ></b-icon
-              ></span>
-            </b-input-group-prepend>
-          </b-input-group>
-        </b-col>
-      </b-row>
-      <b-row align-h="center" class="pb-5">
-        <post
-          v-for="catogary in Catogaries"
-          :key="catogary.id"
-          :name="catogary.name"
-          :imgSource="catogary.imgSource"
-        ></post>
+      <!---------Serch Bar--------->
+      <search-bar></search-bar>
+      <!--------------------------->
+
+
+      <b-row  class="pb-5">
+        <tripCard v-for="Trip in Trips"
+          :key="Trip.id"
+          :tripName="Trip.name"
+          :tripImgSrc="Trip.imgSource"
+          :tripPrice="Trip.price"></tripCard>
+
       </b-row>
     </b-container>
   </DashBoardLayout>
@@ -90,31 +44,81 @@
 
 <script>
 import DashBoardLayout from "@/layouts/dashBoardLayout";
-import sectionHeaderTall from "@/components/sectionHeaderTall.vue";
-import Post from "@/components/post.vue";
+import sectionHeaderTall from "@/components/sectionHeader.vue";
+import searchBar from "@/components/searchBar.vue";
+import TripCard from "@/components/tripCard.vue";
+
+var dropdownSelect=document.getElementsByClassName('dropdown-select');
+var select=document.getElementsByClassName('select');
+var dropdownList=document.getElementsByClassName('dropdown-list');
+
+
+dropdownSelect.onclick = function() {
+  dropdownList.classList.toggle('dropdown-list')
+}
+
+dropdownList.onclick = function(){
+    select.innerHTML='click';
+  }
+
 
 export default {
-  name: "Catogary",
+  name: "Trips",
   components: {
     DashBoardLayout: DashBoardLayout,
     "section-header-tall": sectionHeaderTall,
-    post: Post,
+    "search-bar": searchBar,
+    "tripCard": TripCard,
   },
-  mounted() {
-    this.fetchData();
-  },
+   
   data() {
     return {
-      Catogaries: [],
-    };
+      Trips: [
+            {
+                "imgSource" : "imgCover.png",
+                "name":"رحلة 1",
+                "price": "100",
+                "id": 1
+            },
+            {
+                "imgSource" :"imgCover.png",
+                "name":"رحلة 2",
+                "price": "150",
+                "id": 2
+            },
+            {
+                "imgSource" :"imgCover.png",
+                "name":"رحلة 3",
+                "price": "230",
+                "id": 3
+            },
+            {
+                "imgSource" : "imgCover.png",
+                "name":"رحلة 4",
+                "price": "800",
+                "id": 4
+            },
+            {
+                "imgSource" : "imgCover.png",
+                "name":"رحلة 5",
+                "price": "1000",
+                "id": 5
+            },
+            {
+                "imgSource" : "imgCover.png",
+                "name":"رحلة 6",
+                "price": "120",
+                "id": 6
+            }
+        ],
+    }
   },
-  methods: {
-    async fetchData() {
-      const res = await fetch("catogary.json");
-      const val = await res.json();
-      this.Catogaries = val;
-    },
-  },
+ /* mounted(){
+    fetch('http://localhost:3000/Trips')
+    .then(res => res.json)
+    .then(data => this.Trips = data)
+    .catch(err => console.log(err.message))
+  }*/
 };
 </script>
 <style>
@@ -127,29 +131,6 @@ export default {
   height: auto;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-  color: #014e57;
-  background-color: #d9e7e2;
-  border: #5bbaae;
-  border-width: 2px;
-  cursor: context-menu;
-}
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #d9e7e2;
-  border: #5bbaae;
-  color: #026873;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 12px 16px;
-  z-index: 1;
-}
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
 </style>

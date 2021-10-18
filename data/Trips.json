@@ -1,0 +1,34 @@
+    {
+        "Trips":[
+            {
+                "imgSource" : "../img/imgCover.png",
+                "name":"رحلة 1",
+                "id": 1
+            },
+            {
+                "imgSource" :"../img/imgCover.png",
+                "name":"رحلة 2",
+                "id": 2
+            },
+            {
+                "imgSource" :"../img/imgCover.png",
+                "name":"رحلة 3",
+                "id": 3
+            },
+            {
+                "imgSource" : "../img/imgCover.png",
+                "name":"رحلة 4",
+                "id": 4
+            },
+            {
+                "imgSource" : "../img/imgCover.png",
+                "name":"رحلة 5",
+                "id": 5
+            },
+            {
+                "imgSource" : "../img/imgCover.png",
+                "name":"رحلة 6",
+                "id": 6
+            }
+        ]
+    }

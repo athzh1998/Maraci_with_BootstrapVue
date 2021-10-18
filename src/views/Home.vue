@@ -9,7 +9,7 @@
         <b-container class="sectionsPadding">
           <section-header></section-header>
           <h1>الفئات</h1>
-          <a class="showAllHeader" href="">عرض الكل</a>
+          <a class="showAllLinkInTheSectionHeader" href="">عرض الكل</a>
           <b-row align-h="center" class="py-5">
             <div>
               <b-col class="p-2">
@@ -24,7 +24,7 @@
                       class="darkenImageCatogary h-100"
                       style="border-radius: 10px"
                     >
-                      <b-row class="h-100" align-v="end">
+                      <b-row class="h-100 pb-2" align-v="end">
                         <b-col>
                           <b-card-text class="text-white"
                             ><h3>إستئجار يخت</h3></b-card-text
@@ -48,7 +48,7 @@
                     class="darkenImageCatogary h-100"
                     style="border-radius: 10px"
                   >
-                    <b-row class="h-100" align-v="end">
+                    <b-row class="h-100 pb-2" align-v="end">
                       <b-col>
                         <b-card-text class="text-white"
                           ><h3>إستئجار قارب</h3></b-card-text
@@ -71,7 +71,7 @@
                     class="darkenImageCatogary h-100"
                     style="border-radius: 10px"
                   >
-                    <b-row class="h-100" align-v="end">
+                    <b-row class="h-100 pb-2" align-v="end">
                       <b-col>
                         <b-card-text class="text-white"
                           ><h3>رحلات بحرية</h3></b-card-text
@@ -94,7 +94,7 @@
                     class="darkenImageCatogary h-100"
                     style="border-radius: 10px"
                   >
-                    <b-row class="h-100" align-v="end">
+                    <b-row class="h-100 pb-2" align-v="end">
                       <b-col>
                         <b-card-text class="text-white"
                           ><h3>رحلات صيد</h3></b-card-text
@@ -113,7 +113,7 @@
         <b-container class="sectionsPadding">
           <section-header></section-header>
           <h1>المدونة</h1>
-          <a class="showAllHeader" href="">عرض الكل</a>
+          <a class="showAllLinkInTheSectionHeader" href="">عرض الكل</a>
           <b-row align-h="center" align-v="center" class="py-5">
             <b-col md="7" sm="12">
               <b-img
@@ -124,14 +124,14 @@
               ></b-img>
             </b-col>
             <b-col md="5">
-              <h2>جزر فرسان</h2>
-              <p class="date">12 Sep 2021</p>
+              <h2 class="text-left">جزر فرسان</h2>
+              <p class="date text-left">12 Sep 2021</p>
               <p class="text-justify">
                 حافظت “جزيرة فرسان” جنوب غربي السعودية طيلة الفترة الماضية على
                 مكانتها في أن تكون بقعة من الضوء شاسعة في محيط البحر الأحمر، حين
                 ضمت جزرها الواسعة معالم الدهشة على شواطئها ذات الرمال البيضاء،
                 واحتوت كنوزا من اللؤلؤ في قلب العمق التاريخي الذي تحمله الجزيرة،
-                كما لفتها غابات ... <a class="showAll" href="">إعرف أكثر</a>
+                كما لفتها غابات ... <a class="showAllLinkIntTheBlogs" href="">إعرف أكثر</a>
               </p>
             </b-col>
           </b-row>
@@ -142,13 +142,13 @@
         <b-container class="sectionsPadding">
           <b-row align-h="center" class="py-5">
             <blog-card
-              v-for="blogg in blogs.slice(0, 3)"
-              :key="blogg.id"
-              :id="blogg.id"
-              :blogTitle="blogg.blogTitle"
-              :blogImgSrc="blogg.blogImgSrc"
-              :blogDatee="blogg.blogDatee"
-              :blogText="blogg.blogText"
+              v-for="blog in blogs.slice(0, 3)"
+              :key="blog.id"
+              :id="blog.id"
+              :blogTitle="blog.blogTitle"
+              :blogImgSrc="blog.blogImgSrc"
+              :blogDatee="blog.blogDatee"
+              :blogText="blog.blogText"
             ></blog-card>
           </b-row>
         </b-container>
@@ -168,27 +168,63 @@ export default {
   name: "Home",
   components: {
     "dash-BoardLayout": DashBoardLayout,
-    cover: cover,
+    'cover': cover,
     "section-header": sectionHeader,
     "blog-card": blogCards,
   },
-  mounted() {
-    this.fetchData();
-  },
-  data() {
+  data: function(){
     return {
-      blogs: [],
-    };
-  },
-  methods: {
-    async fetchData() {
-      const res = await fetch("blogs.json");
-      const val = await res.json();
-      this.blogs = val;
-      console.log(val);
-    },
-  },
+    blogs: [
+        {
+            "id" : 1,
+            "blogTitle" : "جزر فرسان",
+            "blogDatee" : "1 صفر 1443",
+            "blogText" : "حافظت “جزيرة فرسان” جنوب غربي السعودية طيلة الفترة الماضية على مكانتها في أن تكون بقعة من الضوء شاسعة في محيط البحر الأحمر، حين ضمت جزرها الواسعة معالم الدهشة على شواطئها ذات الرمال البيضاء، واحتوت كنوزا من اللؤلؤ في قلب العمق التاريخي الذي تحمله الجزيرة، كما لفتها غابات <br><br> هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+            "blogImgSrc" : "blog1.png"
+        },
+        {
+            "id" : 2,
+            "blogTitle" : "العنوان الثاني",
+            "blogDatee" : "25 جمادى الأول 1442",
+            "blogText" : "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+            "blogImgSrc" : "blog2.png"
+        },
+        {
+            "id" : 3,
+            "blogTitle" : "العنوان الثالث",
+            "blogDatee" : "14 رمضان 1440",
+            "blogText" : "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+            "blogImgSrc" : "blog3.png"
+        },
+        {
+            "id" : 4,
+            "blogTitle" : "العنوان الرابع",
+            "blogDatee" : "14 رمضان 1440",
+            "blogText" : "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+            "blogImgSrc" : "blog3.png"
+        },
+        {
+            "id" : 5,
+            "blogTitle" : "العنوان الخامس",
+            "blogDatee" : "14 رمضان 1440",
+            "blogText" : "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+            "blogImgSrc" : "blog1.png"
+        },
+        {
+            "id" : 6,
+            "blogTitle" : "العنوان السادس",
+            "blogDatee" : "14 رمضان 1440",
+            "blogText" : "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+            "blogImgSrc" : "blog2.png"
+        }
+    ]
+    }
+  }
 };
 </script>
 
-<style></style>
+<style>
+.darkenImageCatogary {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 1));
+}
+</style>

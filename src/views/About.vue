@@ -5,7 +5,7 @@
       <h1>عن مراسي</h1>
       <b-row align-h="center">
         <b-col md="10" class="text-dark pb-5">
-          <h5>
+          <h5 class="text-justify">
             هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
             النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد
             من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
@@ -15,7 +15,7 @@
 
       <div class="py-5">
         <b-row>
-          <b-col md="6" sm="8" class="py-2">
+          <b-col md="6" class="py-2">
             <b-card
               img-src="@/assets/img/ourVision.png"
               img-alt="Image"
@@ -26,7 +26,7 @@
                 <b-row class="h-100" align-v="end">
                   <b-col>
                     <b-card-text class="text-white p-4">
-                  <h3 >الرؤية</h3>
+                  <h3 style="font-size:30px;">الرؤية</h3>
                   <p class="text-white text-justify">
                             هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
                   </p>
@@ -36,7 +36,7 @@
               </div>
             </b-card>
           </b-col>
-          <b-col md="6" sm="8" class="py-2" align-v="center">
+          <b-col md="6" class="py-2" align-v="center">
             <b-card
               img-src="@/assets/img/ourMessage.png"
               img-alt="Image"
@@ -47,7 +47,7 @@
                 <b-row class="h-100" align-v="end">
                   <b-col>
                     <b-card-text class="text-white p-4">
-                      <h3>الرسالة</h3>
+                      <h3 style="font-size:30px;">الرسالة</h3>
                       <p class="text-white text-justify">
                         هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد
                         تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد

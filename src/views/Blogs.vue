@@ -5,7 +5,7 @@
       <h1>المدونة</h1>
       <b-row align-h="center">
         <b-col md="10" class="text-dark pb-5">
-          <h5 class="px-2">
+          <h5 class="px-2 text-justify">
             هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
             النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد
             من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
@@ -14,15 +14,19 @@
       </b-row>
 
       <b-row align-h="center" class="py-5">
-        <blog-card
-          v-for="blogg in blogs"
-          :key="blogg.id"
-          :blogTitle="blogg.blogTitle"
-          :blogImgSrc="blogg.blogImgSrc"
-          :blogDatee="blogg.blogDatee"
-          :blogText="blogg.blogText"
-        ></blog-card>
+        <blog-card 
+        v-for="blog in blogs" 
+        :key="blog.id" 
+        :id="blog.id"
+        :blogTitle="blog.blogTitle" 
+        :blogDatee="blog.blogDatee"
+        :blogText="blog.blogText"
+        :blogImgSrc="blog.blogImgSrc"
+        >
+          
+        </blog-card>
       </b-row>
+       
     </div>
   </DashBoardLayout>
 </template>
@@ -30,33 +34,64 @@
 <script>
 import DashBoardLayout from "@/layouts/dashBoardLayout";
 import sectionHeader from "@/components/sectionHeader.vue";
-import blogCards from "@/components/blogCards.vue";
+import blogCard from "@/components/blogCards.vue";
+
 
 export default {
   name: "Blogs",
   components: {
     DashBoardLayout: DashBoardLayout,
     "section-header": sectionHeader,
-    "blog-card": blogCards,
+    'blog-card' : blogCard
   },
-
-  mounted() {
-    this.fetchData2();
-  },
-  data() {
+  data: function(){
     return {
-      blogs: [],
-    };
-  },
-
-  methods: {
-    async fetchData2() {
-      const res = await fetch("blogs.json");
-      const val = await res.json();
-      this.blogs = val;
-      console.log(val);
-    },
-  },
+    blogs: [
+        {
+            "id" : 1,
+            "blogTitle" : "جزر فرسان",
+            "blogDatee" : "1 صفر 1443",
+            "blogText" : "حافظت “جزيرة فرسان” جنوب غربي السعودية طيلة الفترة الماضية على مكانتها في أن تكون بقعة من الضوء شاسعة في محيط البحر الأحمر، حين ضمت جزرها الواسعة معالم الدهشة على شواطئها ذات الرمال البيضاء، واحتوت كنوزا من اللؤلؤ في قلب العمق التاريخي الذي تحمله الجزيرة، كما لفتها غابات <br><br> هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+            "blogImgSrc" : "blog1.png"
+        },
+        {
+            "id" : 2,
+            "blogTitle" : "العنوان الثاني",
+            "blogDatee" : "25 جمادى الأول 1442",
+            "blogText" : "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+            "blogImgSrc" : "blog2.png"
+        },
+        {
+            "id" : 3,
+            "blogTitle" : "العنوان الثالث",
+            "blogDatee" : "14 رمضان 1440",
+            "blogText" : "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+            "blogImgSrc" : "blog3.png"
+        },
+        {
+            "id" : 4,
+            "blogTitle" : "العنوان الرابع",
+            "blogDatee" : "14 رمضان 1440",
+            "blogText" : "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+            "blogImgSrc" : "blog3.png"
+        },
+        {
+            "id" : 5,
+            "blogTitle" : "العنوان الخامس",
+            "blogDatee" : "14 رمضان 1440",
+            "blogText" : "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+            "blogImgSrc" : "blog1.png"
+        },
+        {
+            "id" : 6,
+            "blogTitle" : "العنوان السادس",
+            "blogDatee" : "14 رمضان 1440",
+            "blogText" : "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+            "blogImgSrc" : "blog2.png"
+        }
+    ]
+    }
+  }
 };
 </script>
 <style></style>

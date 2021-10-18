@@ -4,7 +4,7 @@
       <b-container class="sectionsPadding sectionHeight">
         <b-row class="py-5 justify-content-end">
           <b-col md='4'>
-            <b-button size="lg" type="submit" class="w-100">انشر رحلتك 
+            <b-button size="lg" type="submit" class="w-100" to="/AddEditTrip">انشر رحلتك 
               <b-icon icon="plus" font-scale="1.5" aria-hidden="true"></b-icon>
             </b-button>
           </b-col>
@@ -12,59 +12,31 @@
             <b-row align-v="center" class="h-50">
               <b-col md='4' class="pb-4">
                 <div class="darkenBackground p-2 pb-3 w-100">
-                  <!--<b-row class="justify-content-between align-items-center p-2">
-                    <b-col><h5 >اعدادات الحساب الشخصي</h5></b-col>
-                    <b-col><a href="#" v-b-modal.modal-prevent-closing class="float-left"><b-icon class="h5 text-white" icon="pencil-square" aria-hidden="true"></b-icon></a></b-col>
-                  </b-row>-->
                   <b-list-group horizontal class="bg-transparent border-0 justify-content-between p-0">
-                    <b-list-group-item class="bg-transparent border-0"><h5 >اعدادات الحساب الشخصي</h5></b-list-group-item>
+                    <b-list-group-item class="bg-transparent border-0"><h3>اعدادات الحساب الشخصي</h3></b-list-group-item>
                     <b-list-group-item  class="bg-transparent border-0"><a href="#" v-b-modal.modal-prevent-closing><b-icon class="h5 text-white" icon="pencil-square" aria-hidden="true"></b-icon></a></b-list-group-item>
                   </b-list-group>
-                  <div class="pr-5 sm-p-0">
+                  <div class="  pr-5 sm-p-0">
                     <b-list-group horizontal class="bg-transparent border-0 justify-content-between align-items-center">
-                      <b-list-group-item class="bg-transparent border-0 "><h5 >الإسم</h5></b-list-group-item>
-                      <b-list-group-item  class="bg-transparent border-0"><h5> {{name}}</h5></b-list-group-item>
+                      <b-list-group-item class="bg-transparent border-0"><h5 class="text-white" >الإسم</h5></b-list-group-item>
+                      <b-list-group-item  class="bg-transparent border-0"><h5 class="text-white"> {{name}}</h5></b-list-group-item>
                     </b-list-group>
                     <b-list-group horizontal class="bg-transparent border-0 justify-content-between align-items-center">
-                      <b-list-group-item class="bg-transparent border-0"><h5 >رقم الجوال</h5></b-list-group-item>
-                      <b-list-group-item  class="bg-transparent border-0"><h5> {{phone}}</h5></b-list-group-item>
+                      <b-list-group-item class="bg-transparent border-0"><h5 class="text-white">رقم الجوال</h5></b-list-group-item>
+                      <b-list-group-item  class="bg-transparent border-0"><h5 class="text-white"> {{phone}}</h5></b-list-group-item>
                     </b-list-group>
                     <b-list-group horizontal class="bg-transparent border-0 justify-content-between align-items-center">
-                      <b-list-group-item class="bg-transparent border-0"><h5>المدينة</h5></b-list-group-item>
-                      <b-list-group-item  class="bg-transparent border-0"><h5>{{city}}</h5></b-list-group-item>
+                      <b-list-group-item class="bg-transparent border-0"><h5 class="text-white">المدينة</h5></b-list-group-item>
+                      <b-list-group-item  class="bg-transparent border-0"><h5 class="text-white">{{city}}</h5></b-list-group-item>
                     </b-list-group>
                   </div>
                 </div>
               </b-col>
 
-          <b-col md="4">
-            <div class="darkenBackground p-2 pb-3 w-100">
-              <b-list-group
-                horizontal
-                class="bg-transparent border-0 justify-content-between p-0"
-              >
-                <b-list-group-item class="bg-transparent border-0"
-                  ><h5>الرحلات المفضلة</h5></b-list-group-item
-                >
-                <b-list-group-item class="bg-transparent border-0"
-                  ><a href=""
-                    ><b-icon
-                      class="h5 text-white"
-                      icon="arrow-left-circle"
-                      aria-hidden="true"
-                    ></b-icon></a
-                ></b-list-group-item>
-              </b-list-group>
-              <div>
-                <p class="text-white" style="font-size: 60px">4</p>
-              </div>
-            </div>
-          </b-col>
-
               <b-col md='4'  class="pb-4">
                 <div class="darkenBackground p-2 pb-3 w-100">
                   <b-list-group horizontal class="bg-transparent border-0 justify-content-between p-0">
-                    <b-list-group-item class="bg-transparent border-0"><h5 >الرحلات المفضلة</h5></b-list-group-item>
+                    <b-list-group-item class="bg-transparent border-0"><h3>الرحلات المفضلة</h3></b-list-group-item>
                     <b-list-group-item  class="bg-transparent border-0"><a href=""><b-icon class="h5 text-white" icon="arrow-left-circle" aria-hidden="true"></b-icon></a></b-list-group-item>
                   </b-list-group>
                   <div>
@@ -76,8 +48,8 @@
               <b-col md='4'  class="pb-4">
                 <div class="darkenBackground p-2 pb-3 w-100">
                   <b-list-group horizontal class="bg-transparent border-0 justify-content-between p-0">
-                    <b-list-group-item class="bg-transparent border-0 head"><h5 >الرحلات المقدمة</h5></b-list-group-item>
-                    <b-list-group-item  class="bg-transparent border-0"><a href=""><b-icon class="h5 text-white" icon="arrow-left-circle" aria-hidden="true"></b-icon></a></b-list-group-item>
+                    <b-list-group-item class="bg-transparent border-0 head"><h3 >الرحلات المقدمة</h3></b-list-group-item>
+                    <b-list-group-item  class="bg-transparent border-0"><a href="/ProposedTrips"><b-icon class="h5 text-white" icon="arrow-left-circle" aria-hidden="true"></b-icon></a></b-list-group-item>
                   </b-list-group>
                   <div>
                     <p class="text-white" style="font-size:60px;">1</p>
@@ -92,7 +64,7 @@
                   <b-icon class="h4" icon="x" aria-hidden="true"></b-icon>
                 </button>
             </template>
-            <template >
+            <template>
               <div class="px-3">
                 <form>
                 <b-form-group
@@ -188,10 +160,11 @@ export default {
       phone: '0553819511',
       city: 'جدة' 
       }
-  }
+  },
 }
 </script>
 <style>
+
 
 .modal-footer {
   justify-content: center !important;
@@ -200,6 +173,7 @@ export default {
   background-color: rgba(0, 6, 22, 0.8);
   border-radius: 25px;
   height:250px;
+  color:white;
 }
 .inputBorder{
   border-color: #026873 !important;

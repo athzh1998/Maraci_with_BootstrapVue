@@ -5,20 +5,20 @@
       <h1>اتصل بنا</h1>
       <b-row class="h-100" align-h="center" align-v="center">
         <b-col md="10" class="callUsText pb-5">
-          <br /><br /><br />
-          <h5 class="px-2">
+          <br /><br />
+          <p class="px-2">
             إذا كنت ترغب في سماع صوت في الطرف الآخر ، فنحن موجودون من أجلك بكل
             ما تحتاجه.
-          </h5>
+          </p>
           <br />
-          <h5>اتصل على</h5>
-          <h5 style="font-weight: bold">05046773900</h5>
+          <p>اتصل على</p>
+          <p style="font-weight: bold">05046773900</p>
           <br />
-          <h5>
+          <p>
             خطوط الهاتف لدينا مفتوحة:<br />
             السبت - الخميس 09:00 صباحا - 10:00 مساءا<br />
             الجمعة 2:00 مساءا - 10:00 مساءا
-          </h5>
+          </p>
         </b-col>
       </b-row>
     </div>
@@ -39,7 +39,7 @@ export default {
 </script>
 <style>
 .callUsText {
-  font-size: 20px;
+  font-size: 22px;
   color: #014e57;
 }
 </style>

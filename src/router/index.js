@@ -8,6 +8,9 @@ import About from "../views/About.vue";
 import knowMoreAboutBlogs from "../views/knowMoreAboutBlogs.vue";
 import CatogaryPage from "../views/catogaryPage.vue";
 import Profile from "../views/Profile.vue";
+import AddNewTrip from "../views/AddNewTrip.vue";
+import EditTrip from "../views/EditTrip.vue";
+import ProposedTrips from "../views/ProposedTrips.vue";
 
 Vue.use(VueRouter);
 
@@ -46,6 +49,21 @@ const routes = [
     path: "/profile",
     name: "Profile",
     component: Profile,
+  },
+  {
+    path: "/AddNewTrip",
+    name: "AddNewTrip",
+    component: AddNewTrip,
+  },
+  {
+    path: "/ProposedTrips",
+    name: "ProposedTrips",
+    component: ProposedTrips,
+  },
+  {
+    path: "/EditTrip",
+    name: "EditTrip",
+    component: EditTrip,
   },
 
   {
