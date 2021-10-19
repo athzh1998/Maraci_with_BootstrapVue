@@ -5,7 +5,7 @@ import Login from "../views/login.vue";
 import Blogs from "../views/Blogs.vue";
 import CallUs from "../views/callUs.vue";
 import About from "../views/About.vue";
-import knowMoreAboutBlogs from "../views/knowMoreAboutBlogs.vue";
+import AboutBlogs from "../views/AboutBlogs.vue";
 import CatogaryPage from "../views/catogaryPage.vue";
 import Profile from "../views/Profile.vue";
 import AddNewTrip from "../views/AddNewTrip.vue";
@@ -29,6 +29,12 @@ const routes = [
     path: "/Blogs",
     name: "blog",
     component: Blogs,
+  },
+  {
+    path: "/Blogs/:id",
+    name: "AboutBlogs",
+    component: AboutBlogs,
+    props: true
   },
   {
     path: "/login",
@@ -64,13 +70,6 @@ const routes = [
     path: "/EditTrip",
     name: "EditTrip",
     component: EditTrip,
-  },
-
-  {
-    path: "/knowMoreAboutBlogs",
-    name: "knowMoreAboutBlogs",
-    component: knowMoreAboutBlogs,
-    props: true,
   },
 ];
 

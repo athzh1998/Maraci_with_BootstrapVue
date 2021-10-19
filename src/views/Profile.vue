@@ -4,7 +4,7 @@
       <b-container class="sectionsPadding sectionHeight">
         <b-row class="py-5 justify-content-end">
           <b-col md='4'>
-            <b-button size="lg" type="submit" class="w-100" to="/AddEditTrip">انشر رحلتك 
+            <b-button size="lg" type="submit" class="w-100" to="/AddNewTrip">انشر رحلتك 
               <b-icon icon="plus" font-scale="1.5" aria-hidden="true"></b-icon>
             </b-button>
           </b-col>

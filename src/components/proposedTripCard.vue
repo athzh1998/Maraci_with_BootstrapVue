@@ -37,8 +37,8 @@
         class="border-0 shadow bg-white rounded my-3"
         style="border-radius: 15px"
       >
-      <div class="TripImg mb-3">
-        <b-card-img :src= getImgUrl(tripImgSrc) alt="صور من الرحلة" img-top
+      <div class="zoomImg mb-3">
+        <b-card-img :src= getImgUrl(tripImgSrc) alt="صور من الرحلة" img-top class="zoomImg"
         >
         </b-card-img>
       </div>

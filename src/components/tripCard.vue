@@ -10,7 +10,7 @@
             </template>
             <template class="text-center">
               
-              
+              <!--<imgSwiper></imgSwiper>-->
               <br>
               <h2 class="text-center" style="color:#026873">المالك: خالد محمد</h2>
               <p class="text-center">بإمكانك الآن الاتصال للحجز والاستفسار بالرقم التالي: </p>
@@ -29,6 +29,7 @@
             </button>
         </template>
         <template class="text-center">
+            
             <div class="p-4">
             <b-row class="justify-content-between my-auto py-2">
                 <b-col>
@@ -50,7 +51,7 @@
                 <p class="my-auto"><b-icon icon="geo-alt-fill" aria-hidden="true" style="color:#9AD9C2;"></b-icon> جدة  </p>
                 </b-col>
                 <b-col class="mx-auto">
-                <b-button class="btn-secondary mx-auto">احجز الآن</b-button>
+                <b-button v-b-modal.reservation-model @click="$bvModal.hide('details-model')" class="btn-secondary mx-auto">احجز الآن</b-button>
                 </b-col>
                 <b-col>
                   <div class="mx-auto">
@@ -84,7 +85,7 @@
         class="border-0 shadow bg-white rounded my-3"
         style="border-radius: 15px"
       >
-      <div class="TripImg mb-3">
+      <div class="zoomImg mb-3">
         <b-card-img :src= getImgUrl(tripImgSrc) alt="صور من الرحلة" img-top
         >
         </b-card-img>
@@ -136,6 +137,7 @@
     
 </template>
 <script>
+//import imgSwiper from "@/components/imgSwiper";
 export default {
   name: "Trips",
   data: function () {
@@ -143,13 +145,17 @@ export default {
       liked: false,
     };
   },
-  props: ["tripName","tripImgSrc","tripPrice"],
+  props: ["id","tripName","tripImgSrc","tripPrice"],
   methods: {
     getImgUrl: function(pic) {
       return require('@/assets/img/'+pic);
 
   }
   },
+  components: {
+    //'imgSwiper':imgSwiper,
+  }
+  
 };
 </script>
 <style>
@@ -165,18 +171,7 @@ export default {
   width: 100%;
   overflow: hidden !important;
 }
-.TripImg{
-  width: 100%;
-	height: 220px;
-	overflow: hidden;
-  border-radius: 15px;
-}
 
-.TripImg:hover .card-img{
-  -webkit-transform: scale(1.2);
-	transform: scale(1.1);
-  transition: 0.5s ease-in-out;
-}
 
 
 

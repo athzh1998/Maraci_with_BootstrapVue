@@ -37,7 +37,22 @@
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
+    <b-modal id="signout-model" hide-footer>
+           <template #modal-header="{ close }" class="justify-content-center border-0">
+              <button type="button" aria-label="Close" class="close p-0 m-0" @click="close()">
+                  <b-icon class="h4" icon="x" aria-hidden="true"></b-icon>
+                </button>
+            </template>
+            <template class="text-center">
+            <div class="m-3">
+              <h4 class="text-center pb-3">تم تسجيل الخروج بنجاح</h4>
+            </div>
+            </template>
+            
+            
+        </b-modal>
   </div>
+  
 </template>
 <script>
 
@@ -53,6 +68,7 @@ export default {
       }
       else if(selectedValue=='2') {
         this.loggedIn = false;
+       
         this.$router.push("/");
       }
     },

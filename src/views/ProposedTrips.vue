@@ -23,7 +23,7 @@
           :tripImgSrc="this.tripImgSrc"
           :tripPrice="this.tripPrice" ></proposed-TripCard> 
           <b-col md='3' >
-            <b-button size="lg" type="submit" class="w-100" to="/AddEditTrip" 
+            <b-button size="lg" type="submit" class="w-100" to="/AddNewTrip" 
             ><!--style="border-style: dashed; color: grey; border-color: grey; height:100%;"bg-transparent text-dark -->
             انشر رحلتك 
               <b-icon icon="plus" font-scale="1.5" aria-hidden="true"></b-icon>
@@ -32,7 +32,7 @@
           </b-row>
           <div v-else class="justify-content-center my-5">
             <p class="text-dark m-3" >لا يوجد رحلة مقدمة انشر واحدة الان</p>
-            <b-button size="lg" type="submit" class="w-25 mb-5" to="/AddEditTrip" 
+            <b-button size="lg" type="submit" class="w-25 mb-5" to="/AddNewTrip" 
             ><!--style="border-style: dashed; color: grey; border-color: grey; height:100%;"bg-transparent text-dark -->
             انشر رحلتك 
               <b-icon icon="plus" font-scale="1.5" aria-hidden="true"></b-icon>

@@ -18,8 +18,12 @@
                     img-src="@/assets/img/Catogary1.png"
                     img-alt="Image"
                     overlay
-                    class="catogary"
+                    class="zoomImg catogary"
                   >
+                  <div>
+            
+                  </div>
+                  
                     <div
                       class="darkenImageCatogary h-100"
                       style="border-radius: 10px"
@@ -42,7 +46,7 @@
                   img-src="@/assets/img/Catogary-2.png"
                   img-alt="Image"
                   overlay
-                  class="catogary"
+                  class="zoomImg catogary"
                 >
                   <div
                     class="darkenImageCatogary h-100"
@@ -65,7 +69,7 @@
                   img-src="@/assets/img/Catogary-4.png"
                   img-alt="Image"
                   overlay
-                  class="catogary"
+                  class="zoomImg catogary"
                 >
                   <div
                     class="darkenImageCatogary h-100"
@@ -88,7 +92,7 @@
                   img-src="@/assets/img/Catogary-3.png"
                   img-alt="Image"
                   overlay
-                  class="catogary"
+                  class="zoomImg catogary"
                 >
                   <div
                     class="darkenImageCatogary h-100"
@@ -120,7 +124,7 @@
                 src="@/assets/img/Blog.png"
                 fluid
                 alt="Blog image"
-                class="rounded-0"
+                class="zoomImg rounded-0"
               ></b-img>
             </b-col>
             <b-col md="5">
@@ -141,15 +145,16 @@
       <section class="sectionHeight">
         <b-container class="sectionsPadding">
           <b-row align-h="center" class="py-5">
-            <blog-card
-              v-for="blog in blogs.slice(0, 3)"
-              :key="blog.id"
+            <b-col md='4' class="pb-4" v-for="blog in blogs.slice(0, 3)" :key="blog.id">
+              <blog-card 
               :id="blog.id"
-              :blogTitle="blog.blogTitle"
-              :blogImgSrc="blog.blogImgSrc"
+              :blogTitle="blog.blogTitle" 
               :blogDatee="blog.blogDatee"
               :blogText="blog.blogText"
-            ></blog-card>
+              :blogImgSrc="blog.blogImgSrc"
+              >
+              </blog-card>
+            </b-col>
           </b-row>
         </b-container>
       </section>

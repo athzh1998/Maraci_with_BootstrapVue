@@ -29,14 +29,18 @@
       <search-bar></search-bar>
       <!--------------------------->
 
-
+        <div v-for="trip in Trips"  :key="trip.id">
+          <h4>{{trip.name}}</h4>
+        </div>
       <b-row  class="pb-5">
-        <tripCard v-for="Trip in Trips"
-          :key="Trip.id"
-          :tripName="Trip.name"
-          :tripImgSrc="Trip.imgSource"
-          :tripPrice="Trip.price"></tripCard>
-
+       
+        <tripCard v-for="trip in trips"
+          :key="trip.id"
+          :id="trip.id"
+          :tripName="trip.name"
+          :tripImgSrc="trip.imgSource"
+          :tripPrice="trip.price"></tripCard>
+        
       </b-row>
     </b-container>
   </DashBoardLayout>
@@ -63,7 +67,7 @@ dropdownList.onclick = function(){
 
 
 export default {
-  name: "Trips",
+  name: "trips",
   components: {
     DashBoardLayout: DashBoardLayout,
     "section-header-tall": sectionHeaderTall,
@@ -73,52 +77,15 @@ export default {
    
   data() {
     return {
-      Trips: [
-            {
-                "imgSource" : "imgCover.png",
-                "name":"رحلة 1",
-                "price": "100",
-                "id": 1
-            },
-            {
-                "imgSource" :"imgCover.png",
-                "name":"رحلة 2",
-                "price": "150",
-                "id": 2
-            },
-            {
-                "imgSource" :"imgCover.png",
-                "name":"رحلة 3",
-                "price": "230",
-                "id": 3
-            },
-            {
-                "imgSource" : "imgCover.png",
-                "name":"رحلة 4",
-                "price": "800",
-                "id": 4
-            },
-            {
-                "imgSource" : "imgCover.png",
-                "name":"رحلة 5",
-                "price": "1000",
-                "id": 5
-            },
-            {
-                "imgSource" : "imgCover.png",
-                "name":"رحلة 6",
-                "price": "120",
-                "id": 6
-            }
-        ],
+      Trips: []
     }
   },
- /* mounted(){
+  mounted(){
     fetch('http://localhost:3000/Trips')
     .then(res => res.json)
-    .then(data => this.Trips = data)
+    .then(data => this.trips = data)
     .catch(err => console.log(err.message))
-  }*/
+  }
 };
 </script>
 <style>

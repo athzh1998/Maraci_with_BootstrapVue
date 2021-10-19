@@ -1,33 +1,40 @@
     {
         "Trips":[
+            
             {
-                "imgSource" : "../img/imgCover.png",
+                "imgSource" : "imgCover.png",
                 "name":"رحلة 1",
+                "price": "100",
                 "id": 1
             },
             {
-                "imgSource" :"../img/imgCover.png",
+                "imgSource" :"imgCover.png",
                 "name":"رحلة 2",
+                "price": "150",
                 "id": 2
             },
             {
-                "imgSource" :"../img/imgCover.png",
+                "imgSource" :"imgCover.png",
                 "name":"رحلة 3",
+                "price": "230",
                 "id": 3
             },
             {
-                "imgSource" : "../img/imgCover.png",
+                "imgSource" : "imgCover.png",
                 "name":"رحلة 4",
+                "price": "800",
                 "id": 4
             },
             {
-                "imgSource" : "../img/imgCover.png",
+                "imgSource" : "imgCover.png",
                 "name":"رحلة 5",
+                "price": "1000",
                 "id": 5
             },
             {
-                "imgSource" : "../img/imgCover.png",
+                "imgSource" : "imgCover.png",
                 "name":"رحلة 6",
+                "price": "120",
                 "id": 6
             }
         ]

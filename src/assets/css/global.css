@@ -115,7 +115,18 @@ p {
 
 
 
+.zoomImg{
+  width: 100%;
+	height: auto;
+	overflow: hidden;
+  border-radius: 25px;
+}
 
+.zoomImg:hover .card-img{
+  -webkit-transform: scale(1.2);
+	transform: scale(1.1);
+  transition: 0.5s ease-in-out;
+}
 
 
 

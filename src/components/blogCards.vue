@@ -1,12 +1,14 @@
 <template>
-  <b-col md="4" class="pb-3">
     <b-card class="text-left border-0">
-      <b-card-img
-        :src= getImgUrl(blogImgSrc)
-        alt="Blog img"
-        img-top
-        class="blog-img pb-3"
-      ></b-card-img>
+      <div class="zoomImg mb-3">
+        <b-card-img
+          :src= getImgUrl(blogImgSrc)
+          alt="Blog img"
+          img-top
+          class="blog-img pb-3"
+        ></b-card-img>
+      </div>
+      
       <div class="px-3">
         <b-row class="justify-content-between">
           <b-col><b-card-title><h4>{{blogTitle}}</h4></b-card-title></b-col>
@@ -18,19 +20,17 @@
         <b-card-text>
           <p class="text-justify">
             {{ blogText | shorten }}
-            <a class="showAllLinkIntTheBlogs" href="/knowMoreAboutBlogs"> إعرف أكثر</a>
+            <router-link class="showAllLinkIntTheBlogs" :to="{name:'AboutBlogs', params: {id}}"> إعرف أكثر</router-link>
           </p>
-          <!--:to="{name:'knowMoreAboutBlogs', params:{id}}"-->
         </b-card-text>
       </div>
     </b-card>
-  </b-col>
 </template>
 
 <script>
 export default {
   name: "blogCards",
-  props: ["id", "blogTitle", "blogImgSrc", "blogText", "blogDatee"],
+  props: ["id","blogTitle", "blogImgSrc", "blogText", "blogDatee"],
   filters: {
     shorten: function (v) {
       if (v.length > 200) return v.substring(0, 175) + " ...";
@@ -49,4 +49,5 @@ export default {
 .card-body {
   padding: 0 !important;
 }
+
 </style>

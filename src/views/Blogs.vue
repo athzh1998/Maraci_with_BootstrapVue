@@ -12,20 +12,20 @@
           </h5>
         </b-col>
       </b-row>
-
       <b-row align-h="center" class="py-5">
-        <blog-card 
-        v-for="blog in blogs" 
-        :key="blog.id" 
-        :id="blog.id"
-        :blogTitle="blog.blogTitle" 
-        :blogDatee="blog.blogDatee"
-        :blogText="blog.blogText"
-        :blogImgSrc="blog.blogImgSrc"
-        >
-          
+        <b-col md='4' class="pb-4" v-for="blog in blogs" :key="blog.id">
+          <blog-card 
+            :id="blog.id"
+            :blogTitle="blog.blogTitle" 
+            :blogDatee="blog.blogDatee"
+            :blogText="blog.blogText"
+            :blogImgSrc="blog.blogImgSrc"
+            >
         </blog-card>
-      </b-row>
+        </b-col>
+       
+        </b-row>
+     
        
     </div>
   </DashBoardLayout>
