@@ -1,7 +1,7 @@
 <template>
   <DashBoardLayout>
     <b-container class="sectionsPadding">
-      <b-row class="pb-5" style="min-height: calc(100vh - 120px)" >
+      <b-row class="pb-5" style="min-height: calc(100vh - 120px)">
         <b-col md="6" class="pt-4">
           <b-img
             src="@/assets/img/imgCover.png"
@@ -14,14 +14,14 @@
           <section-header-tall></section-header-tall>
           <div class="py-md-5">
             <h1>إستئجار يخت</h1>
-          <br />
-          <h5 class="text-justify">
-            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
-            النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد
-            من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-          </h5>
+            <br />
+            <h5 class="text-justify">
+              هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد
+              هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو
+              العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها
+              التطبيق.
+            </h5>
           </div>
-          
         </b-col>
       </b-row>
 
@@ -29,18 +29,18 @@
       <search-bar></search-bar>
       <!--------------------------->
 
-        <div v-for="trip in Trips"  :key="trip.id">
-          <h4>{{trip.name}}</h4>
-        </div>
-      <b-row  class="pb-5">
-       
-        <tripCard v-for="trip in trips"
+      <div v-for="trip in Trips" :key="trip.id">
+        <h4>{{ trip.name }}</h4>
+      </div>
+      <b-row class="pb-5">
+        <tripCard
+          v-for="trip in Trips"
           :key="trip.id"
           :id="trip.id"
           :tripName="trip.name"
           :tripImgSrc="trip.imgSource"
-          :tripPrice="trip.price"></tripCard>
-        
+          :tripPrice="trip.price"
+        ></tripCard>
       </b-row>
     </b-container>
   </DashBoardLayout>
@@ -52,19 +52,17 @@ import sectionHeaderTall from "@/components/sectionHeader.vue";
 import searchBar from "@/components/searchBar.vue";
 import TripCard from "@/components/tripCard.vue";
 
-var dropdownSelect=document.getElementsByClassName('dropdown-select');
-var select=document.getElementsByClassName('select');
-var dropdownList=document.getElementsByClassName('dropdown-list');
+var dropdownSelect = document.getElementsByClassName("dropdown-select");
+var select = document.getElementsByClassName("select");
+var dropdownList = document.getElementsByClassName("dropdown-list");
 
+dropdownSelect.onclick = function () {
+  dropdownList.classList.toggle("dropdown-list");
+};
 
-dropdownSelect.onclick = function() {
-  dropdownList.classList.toggle('dropdown-list')
-}
-
-dropdownList.onclick = function(){
-    select.innerHTML='click';
-  }
-
+dropdownList.onclick = function () {
+  select.innerHTML = "click";
+};
 
 export default {
   name: "trips",
@@ -72,15 +70,51 @@ export default {
     DashBoardLayout: DashBoardLayout,
     "section-header-tall": sectionHeaderTall,
     "search-bar": searchBar,
-    "tripCard": TripCard,
+    tripCard: TripCard,
   },
-   
+
   data() {
     return {
-      Trips: []
-    }
+      Trips: [
+        {
+          imgSource: "imgCover.png",
+          name: "رحلة 1",
+          price: "100",
+          id: 1,
+        },
+        {
+          imgSource: "imgCover.png",
+          name: "رحلة 2",
+          price: "150",
+          id: 2,
+        },
+        {
+          imgSource: "imgCover.png",
+          name: "رحلة 3",
+          price: "230",
+          id: 3,
+        },
+        {
+          imgSource: "imgCover.png",
+          name: "رحلة 4",
+          price: "800",
+          id: 4,
+        },
+        {
+          imgSource: "imgCover.png",
+          name: "رحلة 5",
+          price: "1000",
+          id: 5,
+        },
+        {
+          imgSource: "imgCover.png",
+          name: "رحلة 6",
+          price: "120",
+          id: 6,
+        },
+      ],
+    };
   },
-  
 };
 </script>
 <style>
@@ -92,7 +126,4 @@ export default {
   max-width: 100%;
   height: auto;
 }
-
-
-
 </style>

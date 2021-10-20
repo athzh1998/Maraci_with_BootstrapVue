@@ -15,17 +15,23 @@
               <div class="p-2">
                 <!----------------------------------------------------------------------------------------->
 
-                <b-form 
-                action="https://vuejs.org/" 
-                method="post" 
-                v-if="login">
+                <b-form action="https://vuejs.org/" method="post" v-if="login">
                   <h3>تسجيل الدخول</h3>
                   <br />
                   <br />
                   <div class="pb-3">
                     <label for="phone" class="d-flex">رقم الجوال</label>
-                    <vue-phone-number-input dir="ltr" v-model="phone" default-country-code="SA" required no-example class="py-2"></vue-phone-number-input>
-                    <small v-if='phone && invalidPhone' style="color: red;" > {{phoneErrorMessage}}</small>
+                    <vue-phone-number-input
+                      dir="ltr"
+                      v-model="phone"
+                      default-country-code="SA"
+                      required
+                      no-example
+                      class="py-2"
+                    ></vue-phone-number-input>
+                    <small v-if="phone && invalidPhone" style="color: red">
+                      {{ phoneErrorMessage }}</small
+                    >
                     <!--<b-form-input
                       id="phone"
                       type="number"
@@ -41,8 +47,12 @@
                       class="p-2"
                       v-model="password"
                     ></b-form-input>
-                    <small v-if='password && invalidPassword' style="color: red;" > {{passwordErrorMessage}}</small>
-
+                    <small
+                      v-if="password && invalidPassword"
+                      style="color: red"
+                    >
+                      {{ passwordErrorMessage }}</small
+                    >
                   </div>
 
                   <b-row align-h="between" class="pb-3">
@@ -67,7 +77,11 @@
                   </b-row>
 
                   <b-row class="pb-3">
-                    <b-col><b-button block class="btn-secondary" @click="isValid">تسجيل الدخول</b-button></b-col>
+                    <b-col
+                      ><b-button block class="btn-secondary" @click="isValid"
+                        >تسجيل الدخول</b-button
+                      ></b-col
+                    >
                     <b-col
                       ><b-button
                         block
@@ -98,9 +112,17 @@
                   </div>
                   <div class="pb-3">
                     <label for="phone" class="d-flex">رقم الجوال</label>
-                    <vue-phone-number-input dir="ltr" v-model="phone" default-country-code="SA" required no-example class="py-2"></vue-phone-number-input>
-                    <small v-if='phone && invalidPhone' style="color: red;" > {{phoneErrorMessage}}</small>
-                    
+                    <vue-phone-number-input
+                      dir="ltr"
+                      v-model="phone"
+                      default-country-code="SA"
+                      required
+                      no-example
+                      class="py-2"
+                    ></vue-phone-number-input>
+                    <small v-if="phone && invalidPhone" style="color: red">
+                      {{ phoneErrorMessage }}</small
+                    >
                   </div>
                   <div class="pb-3">
                     <label for="password" class="d-flex">الرقم السري</label>
@@ -110,11 +132,19 @@
                       class="p-2"
                       v-model="password"
                     ></b-form-input>
-                    <small v-if='password && invalidPassword' style="color: red;" > {{passwordErrorMessage}}</small>
-
+                    <small
+                      v-if="password && invalidPassword"
+                      style="color: red"
+                    >
+                      {{ passwordErrorMessage }}</small
+                    >
                   </div>
                   <b-row class="pt-2 pb-3" align-v="center" align-h="between">
-                    <b-col><b-button class="btn-secondary" @click="isValid">إنشاء حساب</b-button></b-col>
+                    <b-col
+                      ><b-button class="btn-secondary" @click="isValid"
+                        >إنشاء حساب</b-button
+                      ></b-col
+                    >
                     <b-col
                       ><div class="float-left">
                         <a
@@ -139,13 +169,20 @@
                   <br />
                   <div class="pb-3">
                     <label for="phone" class="d-flex">رقم الجوال</label>
-                    <vue-phone-number-input dir="ltr" v-model="phone" default-country-code="SA" required no-example class="py-2"></vue-phone-number-input>                    
+                    <vue-phone-number-input
+                      dir="ltr"
+                      v-model="phone"
+                      default-country-code="SA"
+                      required
+                      no-example
+                      class="py-2"
+                    ></vue-phone-number-input>
                   </div>
 
                   <b-row class="pb-3" align-v="center" align-h="between">
                     <b-col
                       ><b-button
-                      class="btn-secondary"
+                        class="btn-secondary"
                         block
                         @click="
                           forgetPassword = false;
@@ -164,7 +201,8 @@
                             login = true;
                             forgetPassword = false;
                           "
-                          >الغاء</a>
+                          >الغاء</a
+                        >
                       </div></b-col
                     >
                   </b-row>
@@ -190,7 +228,7 @@
                   <b-row class="pb-3" align-v="center" align-h="between">
                     <b-col
                       ><b-button
-                      class="btn-secondary"
+                        class="btn-secondary"
                         block
                         @click="
                           resetPassword = true;
@@ -201,12 +239,18 @@
                     >
                     <b-col
                       ><div class="float-left">
-                        <div v-if='timer!=0'>
+                        <div v-if="timer != 0">
                           انتظر
-                          {{ timer | minutesAndSeconds }} 
+                          {{ timer | minutesAndSeconds }}
                           دقيقة
                         </div>
-                        <a v-else href="#" class="linksLogin" @click="resendVerificationCodeTimer()">اعد ارساله الى الجوال</a>
+                        <a
+                          v-else
+                          href="#"
+                          class="linksLogin"
+                          @click="resendVerificationCodeTimer()"
+                          >اعد ارساله الى الجوال</a
+                        >
                       </div></b-col
                     >
                   </b-row>
@@ -243,7 +287,7 @@
                   <b-row class="pb-3" align-v="center" align-h="between">
                     <b-col
                       ><b-button
-                      class="btn-secondary"
+                        class="btn-secondary"
                         block
                         @click="
                           login = true;
@@ -281,71 +325,62 @@ import LoginAndSignUpLayout from "@/layouts/loginAndSignUpLayout";
 const MINUTES = 3 * 60;
 export default {
   name: "login",
-  data:()=> {
+  data: () => {
     return {
       errors: [],
       name: null,
       phone: null,
       password: null,
       invalidPhone: null,
-      invalidPassword:null,
+      invalidPassword: null,
       login: true,
       signUp: false,
       forgetPassword: false,
       validation: false,
       resetPassword: false,
       phoneErrorMessage: null,
-      passwordErrorMessage:null,
+      passwordErrorMessage: null,
       timer: MINUTES,
-    }  
+    };
   },
   filters: {
-    minutesAndSeconds (value) {
-      var minutes = Math.floor(parseInt(value, 10) / 60)
-      var seconds = parseInt(value, 10) - minutes * 60
-      return `${minutes}:${seconds}`
-    }
+    minutesAndSeconds(value) {
+      var minutes = Math.floor(parseInt(value, 10) / 60);
+      var seconds = parseInt(value, 10) - minutes * 60;
+      return `${minutes}:${seconds}`;
+    },
   },
   components: {
     LoginAndSignUpLayout: LoginAndSignUpLayout,
   },
 
-  mounted () {
-    
-      setInterval(() => {
-        if(this.timer==0)
-        return
-        else this.timer -= 1
-      }, 1000);
-      
-    
+  mounted() {
+    setInterval(() => {
+      if (this.timer == 0) return;
+      else this.timer -= 1;
+    }, 1000);
   },
 
   methods: {
-    resendVerificationCodeTimer () {
-      this.timer = MINUTES
-      
+    resendVerificationCodeTimer() {
+      this.timer = MINUTES;
     },
     isValid() {
-      if(this.phone.length!=9){
-        this.invalidPhone=true
-        this.phoneErrorMessage='رقم الهاتف المدخل غير صحيح'
+      if (this.phone.length != 9) {
+        this.invalidPhone = true;
+        this.phoneErrorMessage = "رقم الهاتف المدخل غير صحيح";
+      } else {
+        this.invalidPhone = false;
+        this.phoneErrorMessage = "";
       }
-      else {
-        this.invalidPhone=false
-        this.phoneErrorMessage=''
-      }
-      if(this.password.length < 8) {
-        this.invalidPassword=true
-        this.passwordErrorMessage='كلمة المرور يجب ان تكون اكثر من 8 خانات'
-      }
-      else {
-        this.invalidPassword=false
-        this.passwordErrorMessage=''
+      if (this.password.length < 8) {
+        this.invalidPassword = true;
+        this.passwordErrorMessage = "كلمة المرور يجب ان تكون اكثر من 8 خانات";
+      } else {
+        this.invalidPassword = false;
+        this.passwordErrorMessage = "";
       }
     },
-    
-  
   },
 };
 </script>

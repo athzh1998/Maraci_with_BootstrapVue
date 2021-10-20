@@ -10,14 +10,30 @@
           النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من
           النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
         </h5>
-        <div v-if="loggedIn" align-v='center'>
-          <b-button size="lg" type="submit" class="btn-secondary w-75" to="/AddNewTrip" style="font-size:20px !important; font-weight:bold;"
+        <div v-if="loggedIn" align-v="center">
+          <b-button
+            size="lg"
+            type="submit"
+            class="btn-secondary w-75"
+            to="/AddNewTrip"
+            style="font-size: 20px !important; font-weight: bold"
             >انشر رحلتك
-            <b-icon icon="plus" font-scale="1.5" aria-hidden="true" class="pt-1"></b-icon>
+            <b-icon
+              icon="plus"
+              font-scale="1.5"
+              aria-hidden="true"
+              class="pt-1"
+            ></b-icon>
           </b-button>
         </div>
         <div v-else>
-          <b-button size="lg" type="submit" class="btn-secondary w-75" style="font-size:20px !important; font-weight:bold;">سجل الآن</b-button>
+          <b-button
+            size="lg"
+            type="submit"
+            class="btn-secondary w-75"
+            style="font-size: 20px !important; font-weight: bold"
+            >سجل الآن</b-button
+          >
         </div>
       </div>
     </b-col>

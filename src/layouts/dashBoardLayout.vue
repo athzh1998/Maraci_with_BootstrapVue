@@ -4,7 +4,7 @@
       <top-header></top-header>
     </div>
     <div>
-    <slot/>
+      <slot />
     </div>
     <div>
       <my-footer></my-footer>
