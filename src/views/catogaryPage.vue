@@ -80,12 +80,7 @@ export default {
       Trips: []
     }
   },
-  mounted(){
-    fetch('http://localhost:3000/Trips')
-    .then(res => res.json)
-    .then(data => this.trips = data)
-    .catch(err => console.log(err.message))
-  }
+  
 };
 </script>
 <style>

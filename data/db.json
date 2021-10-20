@@ -1,60 +1,49 @@
-<template>
-  <DashBoardLayout>
-    <div class="sectionsPadding sectionHeight">
-      <section-header></section-header>
-      <h1>المدونة</h1>
-      <b-row align-h="center">
-        <b-col md="10" class="text-dark pb-5">
-          <h5 class="px-2 text-justify">
-            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
-            النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد
-            من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-          </h5>
-        </b-col>
-      </b-row>
-      <div v-if="blogs.length">
-        <b-row align-h="center" class="py-5">
-          <b-col md='4' class="pb-4" v-for="blog in blogs" :key="blog.id">
-            <blog-card 
-              :id="blog.id"
-              :blogTitle="blog.blogTitle" 
-              :blogDatee="blog.blogDatee"
-              :blogText="blog.blogText"
-              :blogImgSrc="blog.blogImgSrc"
-              >
-          </blog-card>
-          </b-col>
-        </b-row>
-      </div>
-      <div v-else class="sectionsPadding">
-        <h4 class="p-5 m-5">جاري التحميل...</h4>
-      </div>
-       
-    </div>
-  </DashBoardLayout>
-</template>
-
-<script>
-import DashBoardLayout from "@/layouts/dashBoardLayout";
-import sectionHeader from "@/components/sectionHeader.vue";
-import blogCard from "@/components/blogCards.vue";
-
-
-export default {
-  name: "Blogs",
-  components: {
-    DashBoardLayout: DashBoardLayout,
-    "section-header": sectionHeader,
-    'blog-card' : blogCard
-  },
-  data: function(){
-    return {
-      blogs: [
+    {
+        "Trips":[
+            
+            {
+                "imgSource" : "imgCover.png",
+                "name":"رحلة 1",
+                "price": "100",
+                "id": 1
+            },
+            {
+                "imgSource" :"imgCover.png",
+                "name":"رحلة 2",
+                "price": "150",
+                "id": 2
+            },
+            {
+                "imgSource" :"imgCover.png",
+                "name":"رحلة 3",
+                "price": "230",
+                "id": 3
+            },
+            {
+                "imgSource" : "imgCover.png",
+                "name":"رحلة 4",
+                "price": "800",
+                "id": 4
+            },
+            {
+                "imgSource" : "imgCover.png",
+                "name":"رحلة 5",
+                "price": "1000",
+                "id": 5
+            },
+            {
+                "imgSource" : "imgCover.png",
+                "name":"رحلة 6",
+                "price": "120",
+                "id": 6
+            }
+        ],
+        "blogs": [
             {
                 "id" : 1,
                 "blogTitle" : "جزر فرسان",
                 "blogDatee" : "1 صفر 1443",
-                "blogText" : "حافظت “جزيرة فرسان” جنوب غربي السعودية طيلة الفترة الماضية على مكانتها في أن تكون بقعة من الضوء شاسعة في محيط البحر الأحمر، حين ضمت جزرها الواسعة معالم الدهشة على شواطئها ذات الرمال البيضاء، واحتوت كنوزا من اللؤلؤ في قلب العمق التاريخي الذي تحمله الجزيرة، كما لفتها غابات.  هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. طقس جزيرة فرسان هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى. إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.حافظت “جزيرة فرسان” جنوب غربي السعودية طيلة الفترة الماضية على مكانتها في أن تكون بقعة من الضوء شاسعة في محيط البحر الأحمر، حين ضمت جزرها الواسعة معالم الدهشة على شواطئها ذات الرمال البيضاء، واحتوت كنوزا من اللؤلؤ في قلب العمق التاريخي الذي تحمله الجزيرة، كما لفتها غابات .",
+                "blogText" : "حافظت “جزيرة فرسان” جنوب غربي السعودية طيلة الفترة الماضية على مكانتها في أن تكون بقعة من الضوء شاسعة في محيط البحر الأحمر، حين ضمت جزرها الواسعة معالم الدهشة على شواطئها ذات الرمال البيضاء، واحتوت كنوزا من اللؤلؤ في قلب العمق التاريخي الذي تحمله الجزيرة، كما لفتها غابات <br><br> هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
                 "blogImgSrc" : "blog1.png"
             },
             {
@@ -94,14 +83,3 @@ export default {
             }
         ]
     }
-  },
-  /*mounted(){
-    fetch('http://localhost:3000/blogs')
-    .then(res => res.json)
-    .then(data => this.blogs = data)
-    .catch(err => console.log(err.message))
-  }*/
-  
-};
-</script>
-<style></style>

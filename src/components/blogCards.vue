@@ -20,7 +20,7 @@
         <b-card-text>
           <p class="text-justify">
             {{ blogText | shorten }}
-            <router-link class="showAllLinkIntTheBlogs" :to="{name:'AboutBlogs', params: {id}}"> إعرف أكثر</router-link>
+            <router-link class="showAllLinkIntTheBlogs" :to="{name:'AboutBlogs', params: {id,blogTitle,blogDatee,blogText}}"> إعرف أكثر</router-link>
           </p>
         </b-card-text>
       </div>

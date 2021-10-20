@@ -1,5 +1,4 @@
 <template>
-
     <b-col md='3' >
       <b-modal hide-footer id="reservation-model" dir="rtl"> 
             <template #modal-header="{ close }" class="justify-content-center border-0">
