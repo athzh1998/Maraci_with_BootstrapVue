@@ -29,18 +29,17 @@
       <search-bar></search-bar>
       <!--------------------------->
 
-      <div v-for="trip in Trips" :key="trip.id">
-        <h4>{{ trip.name }}</h4>
-      </div>
+     
       <b-row class="pb-5">
-        <tripCard
-          v-for="trip in Trips"
-          :key="trip.id"
+        <b-col md="3" v-for="trip in Trips" :key="trip.id">
+          <tripCard
           :id="trip.id"
           :tripName="trip.name"
           :tripImgSrc="trip.imgSource"
           :tripPrice="trip.price"
+          :liked="liked"
         ></tripCard>
+        </b-col>
       </b-row>
     </b-container>
   </DashBoardLayout>
@@ -75,43 +74,51 @@ export default {
 
   data() {
     return {
+      liked:false,
       Trips: [
         {
           imgSource: "imgCover.png",
           name: "رحلة 1",
           price: "100",
           id: 1,
+          catogaryID: 1
         },
         {
           imgSource: "imgCover.png",
           name: "رحلة 2",
           price: "150",
           id: 2,
+          catogaryID: 2
         },
         {
           imgSource: "imgCover.png",
           name: "رحلة 3",
           price: "230",
           id: 3,
+          catogaryID: 3
         },
         {
           imgSource: "imgCover.png",
           name: "رحلة 4",
           price: "800",
           id: 4,
+          catogaryID: 4
         },
         {
           imgSource: "imgCover.png",
           name: "رحلة 5",
           price: "1000",
           id: 5,
+          catogaryID: 1
         },
         {
           imgSource: "imgCover.png",
           name: "رحلة 6",
           price: "120",
           id: 6,
+          catogaryID: 2
         },
+        
       ],
     };
   },

@@ -40,6 +40,7 @@
             </div>
             <div>
               <b-col class="p-2">
+                <a href="/catogaryPage">
                 <b-card
                   img-src="@/assets/img/Catogary-2.png"
                   img-alt="Image"
@@ -59,10 +60,12 @@
                     </b-row>
                   </div>
                 </b-card>
+                </a>
               </b-col>
             </div>
             <div>
               <b-col class="p-2">
+                <a href="/catogaryPage">
                 <b-card
                   img-src="@/assets/img/Catogary-4.png"
                   img-alt="Image"
@@ -82,29 +85,32 @@
                     </b-row>
                   </div>
                 </b-card>
+                </a>
               </b-col>
             </div>
             <div>
               <b-col class="p-2">
-                <b-card
-                  img-src="@/assets/img/Catogary-3.png"
-                  img-alt="Image"
-                  overlay
-                  class="zoomImg catogary"
-                >
-                  <div
-                    class="darkenImageCatogary h-100"
-                    style="border-radius: 10px"
+                <a href="/catogaryPage">
+                  <b-card
+                    img-src="@/assets/img/Catogary-3.png"
+                    img-alt="Image"
+                    overlay
+                    class="zoomImg catogary"
                   >
-                    <b-row class="h-100 pb-2" align-v="end">
-                      <b-col>
-                        <b-card-text class="text-white"
-                          ><h3>رحلات صيد</h3></b-card-text
-                        >
-                      </b-col>
-                    </b-row>
-                  </div>
-                </b-card>
+                    <div
+                      class="darkenImageCatogary h-100"
+                      style="border-radius: 10px"
+                    >
+                      <b-row class="h-100 pb-2" align-v="end">
+                        <b-col>
+                          <b-card-text class="text-white"
+                            ><h3>رحلات صيد</h3></b-card-text
+                          >
+                        </b-col>
+                      </b-row>
+                    </div>
+                  </b-card>
+                </a>
               </b-col>
             </div>
           </b-row>

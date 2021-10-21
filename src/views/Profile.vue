@@ -92,13 +92,13 @@
                   ><h3>الرحلات المفضلة</h3></b-list-group-item
                 >
                 <b-list-group-item class="bg-transparent border-0"
-                  ><a href=""
+                  ><router-link to="/profile/favorateTrips" href=""
                     ><b-icon
                       class="h5 text-white"
                       icon="arrow-left-circle"
                       aria-hidden="true"
-                    ></b-icon></a
-                ></b-list-group-item>
+                    ></b-icon></router-link>
+                    </b-list-group-item>
               </b-list-group>
               <div>
                 <p class="text-white" style="font-size: 60px">4</p>

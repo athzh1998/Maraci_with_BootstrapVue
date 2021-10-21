@@ -11,6 +11,7 @@ import Profile from "../views/Profile.vue";
 import AddNewTrip from "../views/AddNewTrip.vue";
 import EditTrip from "../views/EditTrip.vue";
 import ProposedTrips from "../views/ProposedTrips.vue";
+import FavorateTrips from "../views/favorateTrips.vue";
 
 Vue.use(VueRouter);
 
@@ -71,6 +72,11 @@ const routes = [
     name: "EditTrip",
     component: EditTrip,
   },
+  {
+    path: "/profile/favorateTrips",
+    name: "favorateTrips",
+    component: FavorateTrips,
+  }
 ];
 
 const router = new VueRouter({
