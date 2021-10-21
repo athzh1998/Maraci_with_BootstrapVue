@@ -29,7 +29,7 @@
       </template>
     </b-modal>
 
-    <b-modal hide-footer :id="`details-model` + id" dir="rtl">
+    <b-modal size="lg" hide-footer :id="`details-model` + id" dir="rtl">
       <template
         #modal-header="{ close }"
         class="justify-content-center border-0"
@@ -45,10 +45,21 @@
         </button>
       </template>
       <template class="text-center">
+        <!-- swiper -->
+        <swiper class="swiper" ref="slideSwiper" :options="swiperOptions">
+          <swiper-slide v-for="img in images" :key="img.id"
+            ><img
+              :src="getImgUrl(tripImgSrc)"
+              style="max-width: 100%; height: auto; object-fit: cover"
+          /></swiper-slide>
+
+          <div class="swiper-pagination" slot="pagination"></div>
+        </swiper>
+
         <div class="p-4">
           <b-row class="justify-content-between my-auto py-2">
             <b-col>
-              <h2>رحلة 1</h2>
+              <h2>رحلة {{ id }}</h2>
             </b-col>
             <b-col>
               <p class="text-dark text-right">المالك: خالد محمد</p>
@@ -77,8 +88,7 @@
             </b-col>
             <b-col class="mx-auto">
               <b-button
-                data-toggle="modal"
-                :data-target="`#reservation-model` + id"
+                v-b-modal="reservationModalId(id)"
                 class="btn-secondary mx-auto"
                 >احجز الآن</b-button
               >
@@ -154,20 +164,14 @@
         <b-row class="pb-2">
           <b-col>
             <b-button
-              href="#"
-              data-toggle="modal"
-              :data-target="`#reservation-model` + id"
+              v-b-modal="reservationModalId(id)"
               variant="secondary"
               class="border-0"
               >إحجز الآن</b-button
             >
           </b-col>
           <b-col>
-            <b-button
-              href="#"
-              data-toggle="modal"
-              :data-target="`#details-model` + id"
-              class="detalesBtn border-0"
+            <b-button v-b-modal="detailsModalId(id)" class="detalesBtn border-0"
               >التفاصيل</b-button
             >
           </b-col>
@@ -178,11 +182,34 @@
 </template>
 <script>
 //import imgSwiper from "@/components/imgSwiper";
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
+
 export default {
   name: "Trips",
-  data: function () {
+  data() {
     return {
       liked: false,
+      images: [
+        {
+          id: 1,
+          img: "imgCover.png",
+        },
+        { id: 2, img: "imgCover.png" },
+        { id: 3, img: "imgCover.png" },
+        { id: 4, img: "imgCover.png" },
+        { id: 5, img: "imgCover.png" },
+        { id: 6, img: "imgCover.png" },
+      ],
+      swiperOptions: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slideToClickedSlide: false,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
     };
   },
   props: ["id", "tripName", "tripImgSrc", "tripPrice"],
@@ -190,8 +217,16 @@ export default {
     getImgUrl: function (pic) {
       return require("@/assets/img/" + pic);
     },
+    reservationModalId(id) {
+      return "reservation-model" + id;
+    },
+    detailsModalId(id) {
+      return "details-model" + id;
+    },
   },
   components: {
+    Swiper,
+    SwiperSlide,
     //'imgSwiper':imgSwiper,
   },
 };
