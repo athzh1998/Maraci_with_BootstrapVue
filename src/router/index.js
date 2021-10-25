@@ -12,6 +12,8 @@ import AddNewTrip from "../views/AddNewTrip.vue";
 import EditTrip from "../views/EditTrip.vue";
 import ProposedTrips from "../views/ProposedTrips.vue";
 import FavorateTrips from "../views/favorateTrips.vue";
+import AllTrips from "../views/AllTrips.vue";
+
 
 Vue.use(VueRouter);
 
@@ -20,6 +22,7 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+
   },
   {
     path: "/about",
@@ -27,9 +30,10 @@ const routes = [
     component: About,
   },
   {
-    path: "/Blogs",
-    name: "blog",
+    path: "/blogs",
+    name: "Blogs",
     component: Blogs,
+
   },
   {
     path: "/Blogs/:id",
@@ -51,6 +55,7 @@ const routes = [
     path: "/catogaryPage",
     name: "CatogaryPage",
     component: CatogaryPage,
+    props: true
   },
   {
     path: "/profile",
@@ -63,12 +68,12 @@ const routes = [
     component: AddNewTrip,
   },
   {
-    path: "/ProposedTrips",
+    path: "/profile/ProposedTrips",
     name: "ProposedTrips",
     component: ProposedTrips,
   },
   {
-    path: "/EditTrip",
+    path: "/profile/ProposedTrips/EditTrip",
     name: "EditTrip",
     component: EditTrip,
   },
@@ -76,6 +81,11 @@ const routes = [
     path: "/profile/favorateTrips",
     name: "favorateTrips",
     component: FavorateTrips,
+  },
+  {
+    path: "/AllTrips",
+    name: "AllTrips",
+    component: AllTrips,
   }
 ];
 

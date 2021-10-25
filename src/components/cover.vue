@@ -10,7 +10,7 @@
           النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من
           النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
         </h5>
-        <div v-if="loggedIn" align-v="center">
+        <div v-if="isloggedIn" align-v="center">
           <b-button
             size="lg"
             type="submit"
@@ -44,9 +44,12 @@ export default {
   name: "cover",
   data: function () {
     return {
-      loggedIn: true,
+      
     };
   },
+  props: {
+  isloggedIn: Boolean,
+  }
 };
 </script>
 <style></style>

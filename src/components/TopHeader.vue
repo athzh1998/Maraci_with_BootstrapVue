@@ -17,20 +17,27 @@
         class="justify-content-end align-items-center px-2"
       >
         <b-navbar-nav>
-          <b-nav-item to="/">الرئيسية</b-nav-item>
-          <b-nav-item to="/about">من نحن</b-nav-item>
-          <b-nav-item to="/blogs">المدونة</b-nav-item>
+          <b-nav-item :to="{
+            name: 'Home',
+          }">الرئيسية</b-nav-item>
+          <b-nav-item :to="{
+            name:'About'
+          }">من نحن</b-nav-item>
+          <b-nav-item :to="{
+            name: 'Blogs',
+          }">المدونة</b-nav-item>
+
 
           <!--v-if and v-else -->
-          <b-nav-item v-if="loggedIn">
+          <b-nav-item v-if="isloggedIn">
             <div class="px-3">
               <select
                 id="topHeaderID"
                 class="topHeaderDropdown"
                 @change="changeFunc()"
+                v-model="userOptions"
               >
-                <b-icon icon="chevron-down" class="icons"></b-icon>
-                <option disabled selected>{{ userName }}</option>
+                <option hidden value="0">{{ userName }}</option>
                 <option value="1">لوحة التحكم</option>
                 <option value="2">تسجيل الخروج</option>
               </select>
@@ -71,6 +78,11 @@
 export default {
   name: "topHeader",
   methods: {
+    showModal (val) {
+      console.log('showModal triggered')
+      console.log(val)
+      this.$refs.myModalRef.show()
+    },
     changeFunc: function () {
       var selectBox = document.getElementById("topHeaderID");
       var selectedValue = selectBox.options[selectBox.selectedIndex].value;
@@ -78,18 +90,71 @@ export default {
       if (selectedValue == "1") {
         this.$router.push("/profile");
       } else if (selectedValue == "2") {
-        this.loggedIn = false;
-
-        this.$router.push("/");
+        this.$bvModal.show("signout-model")
+        this.isloggedIn=false;
       }
     },
+    
   },
   data: function () {
     return {
-      loggedIn: true,
       userName: "أثير حسن",
+      userOptions: "0",
+      blogs: [
+        {
+          id: 1,
+          blogTitle: "جزر فرسان",
+          blogDatee: "1 صفر 1443",
+          blogText:
+            "حافظت “جزيرة فرسان” جنوب غربي السعودية طيلة الفترة الماضية على مكانتها في أن تكون بقعة من الضوء شاسعة في محيط البحر الأحمر، حين ضمت جزرها الواسعة معالم الدهشة على شواطئها ذات الرمال البيضاء، واحتوت كنوزا من اللؤلؤ في قلب العمق التاريخي الذي تحمله الجزيرة، كما لفتها غابات  هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. طقس جزيرة فرسان هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.حافظت “جزيرة فرسان” جنوب غربي السعودية طيلة الفترة الماضية على مكانتها في أن تكون بقعة من الضوء شاسعة في محيط البحر الأحمر، حين ضمت جزرها الواسعة معالم الدهشة على شواطئها ذات الرمال البيضاء، واحتوت كنوزا من اللؤلؤ في قلب العمق التاريخي الذي تحمله الجزيرة، كما لفتها غابات ",
+          blogImgSrc: "blog1.png",
+        },
+        {
+          id: 2,
+          blogTitle: "العنوان الثاني",
+          blogDatee: "25 جمادى الأول 1442",
+          blogText:
+            "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+          blogImgSrc: "blog2.png",
+        },
+        {
+          id: 3,
+          blogTitle: "العنوان الثالث",
+          blogDatee: "14 رمضان 1440",
+          blogText:
+            "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+          blogImgSrc: "blog3.png",
+        },
+        {
+          id: 4,
+          blogTitle: "العنوان الرابع",
+          blogDatee: "14 رمضان 1440",
+          blogText:
+            "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+          blogImgSrc: "blog3.png",
+        },
+        {
+          id: 5,
+          blogTitle: "العنوان الخامس",
+          blogDatee: "14 رمضان 1440",
+          blogText:
+            "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+          blogImgSrc: "blog1.png",
+        },
+        {
+          id: 6,
+          blogTitle: "العنوان السادس",
+          blogDatee: "14 رمضان 1440",
+          blogText:
+            "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+          blogImgSrc: "blog2.png",
+        },
+    ]
     };
   },
+  props: {
+  isloggedIn: Boolean,
+  }
 };
 </script>
 

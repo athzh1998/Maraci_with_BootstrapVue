@@ -43,17 +43,17 @@
           <b-col md="2" class="justify-content-center">
             <b-list-group horizontal class="px-0 justify-content-around">
               <b-list-group-item class="bg-transparent border-0">
-                <a href="https://web.whatsapp.com/">
+                <a href="https://web.whatsapp.com/"  target="_blank">
                   <img src="@/assets/img/whatsapp.png" alt="instagram logo" />
                 </a>
               </b-list-group-item>
               <b-list-group-item class="bg-transparent border-0">
-                <a href="https://www.instagram.com/">
+                <a href="https://www.instagram.com/"  target="_blank">
                   <img src="@/assets/img/instagram.png" alt="instagram logo" />
                 </a>
               </b-list-group-item>
               <b-list-group-item class="bg-transparent border-0">
-                <a href="https://twitter.com/">
+                <a href="https://twitter.com/"  target="_blank">
                   <img src="@/assets/img/twitter.png" alt="twitter logo" />
                 </a>
               </b-list-group-item>

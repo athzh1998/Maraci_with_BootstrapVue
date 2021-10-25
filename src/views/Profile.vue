@@ -116,7 +116,7 @@
                   ><h3>الرحلات المقدمة</h3></b-list-group-item
                 >
                 <b-list-group-item class="bg-transparent border-0"
-                  ><a href="/ProposedTrips"
+                  ><a href="/profile/ProposedTrips"
                     ><b-icon
                       class="h5 text-white"
                       icon="arrow-left-circle"

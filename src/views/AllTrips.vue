@@ -1,37 +1,25 @@
 <template>
   <DashBoardLayout>
-    <b-container class="sectionsPadding">
-      <b-row class="pb-5" style="min-height: calc(100vh - 120px)">
-        <b-col lg="6"  class="pt-4">
-          <b-img
-            src="@/assets/img/imgCover.png"
-            alt="catogary 1 Header"
-            class="imgSize"
-          >
-          </b-img>
-        </b-col>
-        <b-col lg="6">
-          <section-header-tall></section-header-tall>
-          <div class="py-lg-5">
-            <h1>إستئجار يخت</h1>
-            <br />
-            <h5 class="text-justify">
-              هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد
-              هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو
-              العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها
-              التطبيق.
-            </h5>
-          </div>
+    <div class="sectionsPadding sectionHeight">
+      <section-HeaderTall></section-HeaderTall>
+      <h1>كل الرحلات</h1>
+      <b-row align-h="center">
+        <b-col md="10" class="text-dark pb-5">
+          <h5 class="px-2 text-justify">
+            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
+            النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد
+            من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
+          </h5>
         </b-col>
       </b-row>
 
       <!---------Serch Bar--------->
       <search-bar></search-bar>
       <!--------------------------->
-
-     
-      <b-row class="pb-5">
-        <b-col lg='3' md='4' v-for="trip in Trips" :key="trip.id">
+      
+    <b-row class="my-4 h-100">
+      <b-col lg='3' md='4' v-for="trip in Trips" :key="trip.id">
+          
           <tripCard
           :id="trip.id"
           :tripName="trip.name"
@@ -43,42 +31,33 @@
           :tripPhone="trip.tripPhone"
           :liked="liked"
         ></tripCard>
+        
         </b-col>
-      </b-row>
-    </b-container>
+    </b-row>
+      
+      
+          
+    </div>
   </DashBoardLayout>
 </template>
 
 <script>
 import DashBoardLayout from "@/layouts/dashBoardLayout";
-import sectionHeaderTall from "@/components/sectionHeader.vue";
+import sectionHeaderTall from "@/components/sectionHeaderTall.vue";
 import searchBar from "@/components/searchBar.vue";
 import TripCard from "@/components/tripCard.vue";
 
-var dropdownSelect = document.getElementsByClassName("dropdown-select");
-var select = document.getElementsByClassName("select");
-var dropdownList = document.getElementsByClassName("dropdown-list");
-
-dropdownSelect.onclick = function () {
-  dropdownList.classList.toggle("dropdown-list");
-};
-
-dropdownList.onclick = function () {
-  select.innerHTML = "click";
-};
-
 export default {
-  name: "trips",
+  name: "FavorateTrips",
   components: {
     DashBoardLayout: DashBoardLayout,
-    "section-header-tall": sectionHeaderTall,
+    "section-HeaderTall": sectionHeaderTall,
     "search-bar": searchBar,
     tripCard: TripCard,
   },
-
   data: function () {
-    return {
-      liked:false,
+      return {
+        liked:false,
       Trips: [
         {
           imgSource: "imgCover.png",
@@ -142,17 +121,11 @@ export default {
         },
         
       ],
-    };
-  },
-};
+    }
+  }
+}
 </script>
-<style>
-.topCol {
-  align-items: start !important;
-}
 
-.imgSize {
-  max-width: 100%;
-  height: auto;
-}
+<style>
+
 </style>

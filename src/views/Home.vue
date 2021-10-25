@@ -1,15 +1,15 @@
 <template>
-  <dash-BoardLayout>
+  <dash-BoardLayout :isloggedIn='this.isloggedIn'>
     <b-container>
       <section>
-        <cover></cover>
+        <cover :isloggedIn='this.isloggedIn'></cover>
       </section>
 
       <section class="sectionHeight">
         <b-container class="sectionsPadding">
           <section-header></section-header>
           <h1>الفئات</h1>
-          <a class="showAllLinkInTheSectionHeader" href="">عرض الكل</a>
+          <a class="showAllLinkInTheSectionHeader" href="/AllTrips">عرض الكل</a>
           <b-row align-h="center" class="py-5">
             <div>
               <b-col class="p-2">
@@ -121,7 +121,7 @@
         <b-container class="sectionsPadding">
           <section-header></section-header>
           <h1>المدونة</h1>
-          <a class="showAllLinkInTheSectionHeader" href="">عرض الكل</a>
+          <a class="showAllLinkInTheSectionHeader" href="/blogs">عرض الكل</a>
           <b-row align-h="center" align-v="center" class="py-5">
             <b-col md="7" sm="12">
               <b-img
@@ -135,12 +135,15 @@
               <h2 class="text-left">جزر فرسان</h2>
               <p class="date text-left">12 Sep 2021</p>
               <p class="text-justify">
-                حافظت “جزيرة فرسان” جنوب غربي السعودية طيلة الفترة الماضية على
-                مكانتها في أن تكون بقعة من الضوء شاسعة في محيط البحر الأحمر، حين
-                ضمت جزرها الواسعة معالم الدهشة على شواطئها ذات الرمال البيضاء،
-                واحتوت كنوزا من اللؤلؤ في قلب العمق التاريخي الذي تحمله الجزيرة،
-                كما لفتها غابات ...
-                <a class="showAllLinkIntTheBlogs" href="">إعرف أكثر</a>
+                {{this.blogs[0].blogText | shorten}}
+                <router-link
+                class="showAllLinkIntTheBlogs"
+                :to="{
+                  name: 'AboutBlogs',
+                  params: { id, blogTitle, blogDatee, blogText },
+                }">
+                إعرف أكثر
+                </router-link>
               </p>
             </b-col>
           </b-row>
@@ -187,8 +190,16 @@ export default {
     "section-header": sectionHeader,
     "blog-card": blogCards,
   },
+  filters: {
+    shorten: function (v) {
+      if (v.length > 200) return v.substring(0, 175) + " ...";
+      else return v;
+    },
+  },
   data: function () {
     return {
+      id:1, blogTitle:"جزر فرسان", blogDatee:"1 صفر 1443", blogText:"حافظت “جزيرة فرسان” جنوب غربي السعودية طيلة الفترة الماضية على مكانتها في أن تكون بقعة من الضوء شاسعة في محيط البحر الأحمر، حين ضمت جزرها الواسعة معالم الدهشة على شواطئها ذات الرمال البيضاء، واحتوت كنوزا من اللؤلؤ في قلب العمق التاريخي الذي تحمله الجزيرة، كما لفتها غابات  هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. طقس جزيرة فرسان هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.حافظت “جزيرة فرسان” جنوب غربي السعودية طيلة الفترة الماضية على مكانتها في أن تكون بقعة من الضوء شاسعة في محيط البحر الأحمر، حين ضمت جزرها الواسعة معالم الدهشة على شواطئها ذات الرمال البيضاء، واحتوت كنوزا من اللؤلؤ في قلب العمق التاريخي الذي تحمله الجزيرة، كما لفتها غابات ",
+      isloggedIn:true,
       blogs: [
         {
           id: 1,
@@ -241,12 +252,6 @@ export default {
       ],
     };
   },
-  /*mounted(){
-    fetch('http://localhost:3000/blogs')
-    .then(res => res.json)
-    .then(data => this.blogs = data)
-    .catch(err => console.log(err.message))
-  }*/
 };
 </script>
 

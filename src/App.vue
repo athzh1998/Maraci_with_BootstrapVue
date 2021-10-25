@@ -1,10 +1,12 @@
 <template>
   <div id="app" class="rtl">
-    <router-view />
+    <router-view/>
   </div>
 </template>
 
-<script></script>
+<script>
+
+</script>
 
 <style lang="scss">
 @import "~@/assets/scss/vendors/bootstrap-vue/index";

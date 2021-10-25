@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div id="nav">
+    <div id="nav" v-if="isloggedIn">
+      <top-header isloggedIn></top-header>
+    </div>
+    <div id="nav" v-else>
       <top-header></top-header>
     </div>
     <div>
@@ -21,5 +24,8 @@ export default {
     "top-header": TopHeader,
     "my-footer": myFooter,
   },
+  props:{
+     isloggedIn: Boolean
+  }
 };
 </script>

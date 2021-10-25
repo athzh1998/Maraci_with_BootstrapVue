@@ -19,13 +19,17 @@
       
     <b-row class="my-4">
         <b-col md='3' v-for="trip in Trips" :key="trip.id">
-            <tripCard
-            :id="trip.id"
-            :tripName="trip.name"
-            :tripImgSrc="trip.imgSource"
-            :tripPrice="trip.price"
-            :liked="liked"
-            ></tripCard>
+             <tripCard
+                :id="trip.id"
+                :tripName="trip.name"
+                :tripAvailableNumber="trip.tripAvailableNumber"
+                :tripOwner="trip.tripOwner"
+                :tripText="trip.tripText"
+                :tripImgSrc="trip.imgSource"
+                :tripPrice="trip.price"
+                :tripPhone="trip.tripPhone"
+                :liked="liked"
+                ></tripCard>
         </b-col>
     </b-row>
       
@@ -52,40 +56,69 @@ export default {
   data: function () {
       return {
         liked:true,
-        Trips: [
-            {
-            imgSource: "imgCover.png",
-            name: "رحلة 1",
-            price: "100",
-            id: 1,
-            },
-            {
-            imgSource: "imgCover.png",
-            name: "رحلة 2",
-            price: "150",
-            id: 2,
-            },
-            {
-            imgSource: "imgCover.png",
-            name: "رحلة 4",
-            price: "800",
-            id: 4,
-            },
-            {
-            imgSource: "imgCover.png",
-            name: "رحلة 6",
-            price: "120",
-            id: 6,
-            
-            },
-            {
-            imgSource: "imgCover.png",
-            name: "رحلة 8",
-            price: "520",
-            id: 8,
-            
-            },
-        ],
+      Trips: [
+        {
+          imgSource: "imgCover.png",
+          name: "رحلة 1",
+          price: "100",
+          id: 1,
+          tripAvailableNumber: '1',
+          tripOwner: 'عبدالله محمد',
+          tripText: 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
+          tripPhone:'0538195111'
+        },
+        {
+          imgSource: "imgCover.png",
+          name: "رحلة 2",
+          price: "150",
+          id: 2,
+          tripAvailableNumber: '5',
+          tripOwner: 'متعب المطيري',
+          tripText: 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
+          tripPhone:'0554440922'
+        },
+        {
+          imgSource: "imgCover.png",
+          name: "رحلة 3",
+          price: "230",
+          id: 3,
+          tripAvailableNumber: '4',
+          tripOwner: ' محمد الحارثي',
+          tripText: 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
+          tripPhone:'0512991221'
+        },
+        {
+          imgSource: "imgCover.png",
+          name: "رحلة 4",
+          price: "800",
+          id: 4,
+          tripAvailableNumber: '2',
+          tripOwner: 'فارس الرويلي',
+          tripText: 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
+          tripPhone:'0555555555'
+        },
+        {
+          imgSource: "imgCover.png",
+          name: "رحلة 5",
+          price: "1000",
+          id: 5,
+          tripAvailableNumber: '5',
+          tripOwner: 'أثير حسن',
+          tripText: 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
+          tripPhone:'0505050505'
+        },
+        {
+          imgSource: "imgCover.png",
+          name: "رحلة 6",
+          price: "120",
+          id: 6,
+          tripAvailableNumber: "6",
+          tripOwner: 'نواف العصيمي',
+          tripText: 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
+          tripPhone:'0126214235'
+        },
+        
+      ],
     }
   }
 }

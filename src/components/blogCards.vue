@@ -29,10 +29,9 @@
             :to="{
               name: 'AboutBlogs',
               params: { id, blogTitle, blogDatee, blogText },
-            }"
-          >
-            إعرف أكثر</router-link
-          >
+            }">
+            إعرف أكثر
+            </router-link>
         </p>
       </b-card-text>
     </div>
