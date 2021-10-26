@@ -2,7 +2,7 @@
   <b-card class="text-left border-0">
     <div class="zoomImg mb-3">
       <b-card-img
-        :src="getImgUrl(blogImgSrc)"
+        :src="getImgUrl(blogImgSrc[0])"
         alt="Blog img"
         img-top
         class="blog-img pb-3"
@@ -21,18 +21,21 @@
           <br
         /></b-col>
       </b-row>
-      <b-card-text>
-        <p class="text-justify">
-          {{ blogText | shorten }}
-          <router-link
-            class="showAllLinkIntTheBlogs"
-            :to="{
-              name: 'AboutBlogs',
-              params: { id, blogTitle, blogDatee, blogText },
-            }">
-            إعرف أكثر
-            </router-link>
-        </p>
+      <b-card-text >
+          <p class="text-justify">
+              {{ stringReturn(blogText) | shorten }}
+              <router-link
+          class="showAllLinkIntTheBlogs"
+          :to="{
+            name: 'AboutBlogs',
+            params: { id, blogTitle, blogDatee, blogText ,blogImgSrc },
+          }">
+          إعرف أكثر
+        </router-link>
+          </p>
+        
+          
+        
       </b-card-text>
     </div>
   </b-card>
@@ -44,7 +47,7 @@ export default {
   props: ["id", "blogTitle", "blogImgSrc", "blogText", "blogDatee"],
   filters: {
     shorten: function (v) {
-      if (v.length > 200) return v.substring(0, 175) + " ...";
+      if (v.length > 200) return v.substring(0, 200) + " ...";
       else return v;
     },
   },
@@ -52,6 +55,13 @@ export default {
     getImgUrl: function (pic) {
       return require("@/assets/img/" + pic);
     },
+    stringReturn: function(arr){
+      var str='';
+      for (var i=0; i<arr.length; i++){
+        str+=arr[i]["text"]+' '
+      }
+      return str;
+    }
   },
 };
 </script>

@@ -179,7 +179,6 @@
     
 </template>
 <script>
-//import imgSwiper from "@/components/imgSwiper";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 

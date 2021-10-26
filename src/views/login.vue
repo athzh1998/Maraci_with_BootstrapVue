@@ -20,24 +20,16 @@
                   <br />
                   <br />
                   <div class="pb-3">
-                    <label for="phone" class="d-flex">رقم الجوال</label>
-                    <vue-phone-number-input
-                      dir="ltr"
-                      v-model="phone"
-                      default-country-code="SA"
-                      required
-                      no-example
-                      class="py-2"
-                    ></vue-phone-number-input>
-                    <small v-if="phone && invalidPhone" style="color: red">
-                      {{ phoneErrorMessage }}</small
-                    >
-                    <!--<b-form-input
-                      id="phone"
-                      type="number"
-                      v-model="phone"
+                    <label for="email" class="d-flex">البريد الإلكتروني</label>
+                    <b-form-input
+                      type="text"
                       class="p-2"
-                    ></b-form-input>-->
+                      v-model="email"
+                      required
+                    ></b-form-input>
+                    <small v-if="invalidEmail" style="color: red">
+                      {{ emailErrorMessage }}</small
+                    >
                   </div>
                   <div class="pb-3">
                     <label for="password" class="d-flex">الرقم السري</label>
@@ -48,7 +40,7 @@
                       v-model="password"
                     ></b-form-input>
                     <small
-                      v-if="password && invalidPassword"
+                      v-if="invalidPassword"
                       style="color: red"
                     >
                       {{ passwordErrorMessage }}</small
@@ -111,17 +103,15 @@
                     ></b-form-input>
                   </div>
                   <div class="pb-3">
-                    <label for="phone" class="d-flex">رقم الجوال</label>
-                    <vue-phone-number-input
-                      dir="ltr"
-                      v-model="phone"
-                      default-country-code="SA"
+                    <label for="email" class="d-flex">البريد الإلكتروني</label>
+                    <b-form-input
+                      type="text"
+                      class="p-2"
+                      v-model="email"
                       required
-                      no-example
-                      class="py-2"
-                    ></vue-phone-number-input>
-                    <small v-if="phone && invalidPhone" style="color: red">
-                      {{ phoneErrorMessage }}</small
+                    ></b-form-input>
+                    <small v-if="email && invalidEmail" style="color: red">
+                      {{ emailErrorMessage }}</small
                     >
                   </div>
                   <div class="pb-3">
@@ -168,15 +158,16 @@
                   <br />
                   <br />
                   <div class="pb-3">
-                    <label for="phone" class="d-flex">رقم الجوال</label>
-                    <vue-phone-number-input
-                      dir="ltr"
-                      v-model="phone"
-                      default-country-code="SA"
+                    <label for="email" class="d-flex">البريد الإلكتروني</label>
+                    <b-form-input
+                      type="text"
+                      class="p-2"
+                      v-model="email"
                       required
-                      no-example
-                      class="py-2"
-                    ></vue-phone-number-input>
+                    ></b-form-input>
+                    <small v-if="email && invalidEmail" style="color: red">
+                      {{ emailErrorMessage }}</small
+                    >
                   </div>
 
                   <b-row class="pb-3" align-v="center" align-h="between">
@@ -216,12 +207,13 @@
                   <br />
                   <div class="pb-3">
                     <label for="code" class="d-flex"
-                      >كود التحقق المرسل على رقم الجوال</label
+                      >كود التحقق المرسل على البريد الالكتروني</label
                     >
                     <b-form-input
                       id="code"
                       type="text"
                       class="p-2"
+                    
                     ></b-form-input>
                   </div>
 
@@ -329,16 +321,16 @@ export default {
     return {
       errors: [],
       name: null,
-      phone: null,
-      password: null,
-      invalidPhone: null,
+      email: '',
+      password: '',
+      invalidEmail: null,
       invalidPassword: null,
       login: true,
       signUp: false,
       forgetPassword: false,
       validation: false,
       resetPassword: false,
-      phoneErrorMessage: null,
+      emailErrorMessage: null,
       passwordErrorMessage: null,
       timer: MINUTES,
     };
@@ -366,20 +358,29 @@ export default {
       this.timer = MINUTES;
     },
     isValid() {
-      if (this.phone.length != 9) {
-        this.invalidPhone = true;
-        this.phoneErrorMessage = "رقم الهاتف المدخل غير صحيح";
-      } else {
-        this.invalidPhone = false;
-        this.phoneErrorMessage = "";
+      if (this.email.length===0 || !this.email.includes('@') || !this.email.includes('.')) {
+        this.invalidEmail = true;
+        this.emailErrorMessage = "البريد الإلكتروني المدخل غير صحيح";
+      }else {
+        this.invalidEmail = false;
+        this.emailErrorMessage = "";
       }
+
       if (this.password.length < 8) {
         this.invalidPassword = true;
         this.passwordErrorMessage = "كلمة المرور يجب ان تكون اكثر من 8 خانات";
-      } else {
+      }
+      else {
         this.invalidPassword = false;
         this.passwordErrorMessage = "";
       }
+
+      if (!this.invalidEmail && !this.invalidPassword) {
+        window.location.href = "/";
+      }
+      
+
+      
     },
   },
 };
