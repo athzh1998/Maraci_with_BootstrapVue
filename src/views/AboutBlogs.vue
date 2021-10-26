@@ -1,11 +1,12 @@
 <template>
   <dash-BoardLayout>
-    <div id='blogBackground' class="blogImgViewMore d-flex my-auto">
+    <div class="blogImgViewMore d-flex my-auto">
       <div class="m-auto">
         <h3 style="font-size: 60px">{{ $route.params.blogTitle }}</h3>
         <p class="text-white">{{ $route.params.blogDatee }}</p>
       </div>
     </div>
+
     <div class="sectionsPadding">
       <b-row>
         <b-col md="8">
@@ -19,8 +20,8 @@
             </p>
           </div>
 
-          <swiper class="swiper mb-5 " :options="swiperOption">
-            <swiper-slide v-for="image in $route.params.blogImgSrc" :key="image">
+          <swiper class="swiper mb-5 " :options="swiperOption2">
+            <swiper-slide class="swiper-slide-style" v-for="image in $route.params.blogImgSrc" :key="image">
               <b-img class="blogCursol" :src="getImgUrl(image)" fluid :alt="$route.params.blogTitle"></b-img>
               </swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
@@ -64,12 +65,12 @@ export default {
   components: {
     "dash-BoardLayout": DashBoardLayout,
     blogCards: blogCards,
-       Swiper,
-    SwiperSlide,
+      Swiper,
+      SwiperSlide,
   },
   data: function () {
     return {
-       swiperOption: {
+       swiperOption2: {
           // Enable lazy loading
           lazy: true,
           pagination: {
@@ -240,15 +241,8 @@ export default {
       ],
     };
   },
-  filters: {
-    newling: function (v) {
-      return v.split(".");
-    },
-  },
+  
     methods: {
-      backgroundDesign() {
-        document.getElementById("blogBackground").style.backgroundImage = "url('"+this.blogImgSrc+"')";
-      },
       getImgUrl: function (pic) {
         return require("@/assets/img/" + pic);
       },
@@ -265,17 +259,16 @@ export default {
   background-size: cover;
   height: calc(60vh);
 }
-.blogParagraph {
-  font-size: 25px !important;
-  padding: 1.5rem 0;
+
+.darken{
+   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 1));
 }
 
-.swiper-slide {
+.swiper-slide-style {
     text-align: center;
     background: #000 !important;
-    
   }
-
+  
 .blogCursol {
       width: auto;
       height: auto;
@@ -285,5 +278,5 @@ export default {
       position: absolute;
       left: 50%;
       top: 50%;
-    }
+  }
 </style>
