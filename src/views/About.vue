@@ -14,8 +14,8 @@
       </b-row>
 
       <div class="py-5">
-        <b-row>
-          <b-col md="6" class="py-2">
+        <b-row align-h="center"> 
+          <b-col lg="6" md="10" class="pb-5">
             <b-card
               img-src="@/assets/img/ourVision.png"
               img-alt="Image"
@@ -39,7 +39,7 @@
               </div>
             </b-card>
           </b-col>
-          <b-col md="6" class="py-2" align-v="center">
+          <b-col lg="6" md="10" class="pb-5" align-v="center">
             <b-card
               img-src="@/assets/img/ourMessage.png"
               img-alt="Image"

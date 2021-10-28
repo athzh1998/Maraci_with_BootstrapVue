@@ -41,19 +41,22 @@
           <span class="boldAndBlue">{{ tripPrice }} ريال سعودي </span>
           <span class="text-dark"> للشخص الواحد </span>
         </b-card-text>
-        <b-row class="pb-2">
+        <b-row class="pb-2" align-h="center">
           <b-col>
             <b-button
               v-b-modal="reservationModalId(id)"
               variant="secondary"
-              class="border-0 px-0"
+              class="border-0 px-1"
               >إحجز الآن</b-button
             >
           </b-col>
           <b-col>
-            <b-button v-b-modal="detailsModalId(id)" class="detalesBtn border-0"
-              >التفاصيل</b-button
+            <b-button 
+            v-b-modal="detailsModalId(id)" 
+            class="detalesBtn border-0 px-1"
             >
+            التفاصيل
+            </b-button>
           </b-col>
         </b-row>
       </div>

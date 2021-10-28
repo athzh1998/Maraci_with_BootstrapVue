@@ -1,17 +1,26 @@
 <template>
   <dash-BoardLayout>
-    <div class="blogImgViewMore d-flex my-auto">
-      <div class="m-auto">
-        <h3 style="font-size: 60px">{{ $route.params.blogTitle }}</h3>
-        <p class="text-white">{{ $route.params.blogDatee }}</p>
+    <div class="position-relative w-100" style="height:300px;">
+      <b-img
+        :src="getImgUrl($route.params.blogImgSrc[0])"
+        class="position-absolute"
+        style="width:100%; height:100%; object-fit:cover; top: 0; left:0;"
+        >
+      </b-img>
+      <div class="darken position-relative d-flex my-auto z-index-1" style="height:100%;">
+        <div class="m-auto">
+          <h3 style="font-size: 60px">{{ $route.params.blogTitle }}</h3>
+          <p class="text-white">{{ $route.params.blogDatee }}</p>
+        </div>
       </div>
     </div>
+   
+    
 
     <div class="sectionsPadding">
       <b-row>
-        <b-col md="8">
-          <br>
-          <div class="text-justify mt-5" v-for="(blogT, index) in $route.params.blogText" :key="index">
+        <b-col lg="8" class="pt-5 pb-3 ">
+          <div class="text-justify" v-for="(blogT, index) in $route.params.blogText" :key="index">
             <h4 style="font-size: 30px">
               {{ blogT.title +" "}}
             </h4>
@@ -30,11 +39,12 @@
           </swiper>
 
         </b-col>
-        <b-col md="4"
-          ><h2 class="pt-5 px-4 pb-3 text-left">اقرأ أكثر عن</h2>
+        <b-col lg="4"
+          ><h2 class="pt-5 pb-3 px-4 text-left">اقرأ أكثر عن</h2>
           <b-row align-h="center" class="pb-4">
             <b-col
-              md="10"
+            lg='10'
+              md="6"
               class="my-3"
               v-for="blog in blogs.slice(0, 2)"
               :key="blog.id"
@@ -144,7 +154,7 @@ export default {
             }
             ,
           ],
-          blogImgSrc:["saif1.jpeg","saif2.jpeg","saif3.jpeg","saif4.jpeg","saif5.jpeg","saif6.jpeg","saif7.jpeg","saif8.jpeg"],
+          blogImgSrc:["saif7.jpeg","saif1.jpeg","saif2.jpeg","saif3.jpeg","saif4.jpeg","saif5.jpeg","saif6.jpeg","saif8.jpeg"],
         },
         {
           id: 3,
@@ -261,7 +271,7 @@ export default {
 }
 
 .darken{
-   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 1));
+   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.9));
 }
 
 .swiper-slide-style {

@@ -10,8 +10,8 @@
             </b-button>
           </b-col>
         </b-row>
-        <b-row align-v="center" class="h-50">
-          <b-col md="4" class="pb-4">
+        <b-row align-v="center" align-h="center" class="h-50">
+          <b-col lg="4" md='10' class="pb-4">
             <div class="darkenBackground p-2 pb-3 w-100">
               <b-list-group
                 horizontal
@@ -72,7 +72,7 @@
                   "
                 >
                   <b-list-group-item class="bg-transparent border-0"
-                    ><h5 class="text-white">المدينة</h5></b-list-group-item
+                    ><h5 class="text-white textStyle">المدينة</h5></b-list-group-item
                   >
                   <b-list-group-item class="bg-transparent border-0"
                     ><h5 class="text-white">{{ city }}</h5></b-list-group-item
@@ -82,7 +82,7 @@
             </div>
           </b-col>
 
-          <b-col md="4" class="pb-4">
+          <b-col lg="4" md='10' class="pb-4">
             <div class="darkenBackground p-2 pb-3 w-100">
               <b-list-group
                 horizontal
@@ -106,7 +106,7 @@
             </div>
           </b-col>
 
-          <b-col md="4" class="pb-4">
+          <b-col lg="4" md='10' class="pb-4">
             <div class="darkenBackground p-2 pb-3 w-100">
               <b-list-group
                 horizontal
@@ -243,11 +243,19 @@ export default {
 };
 </script>
 <style>
+
+/*@media only screen and (max-width: 868px) {
+  .textStyle {
+    font-size: 30px;
+  }
+
+}*/
+
 .modal-footer {
   justify-content: center !important;
 }
 .darkenBackground {
-  background-color: rgba(0, 6, 22, 0.8);
+  background-color: rgba(133, 161, 240, 0.8);
   border-radius: 25px;
   height: 250px;
   color: white;
@@ -262,7 +270,6 @@ export default {
   color: #014e57 !important;
   font-size: 20px !important;
 }
-
 .w-30 {
   width: 30% !important;
 }

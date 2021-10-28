@@ -14,7 +14,7 @@
       </b-row>
       <div v-if="blogs.length">
         <b-row class="py-5">
-          <b-col md="4" class="pb-4" v-for="blog in blogs" :key="blog.id">
+          <b-col lg="4" md="6" class="pb-4" v-for="blog in blogs" :key="blog.id">
             <blog-card
               :id="blog.id"
               :blogTitle="blog.blogTitle"
@@ -109,7 +109,7 @@ export default {
             }
             ,
           ],
-          blogImgSrc:["saif1.jpeg","saif2.jpeg","saif3.jpeg","saif4.jpeg","saif5.jpeg","saif6.jpeg","saif7.jpeg","saif8.jpeg"],
+          blogImgSrc:["saif7.jpeg","saif1.jpeg","saif2.jpeg","saif3.jpeg","saif4.jpeg","saif5.jpeg","saif6.jpeg","saif8.jpeg"],
         },
         {
           id: 3,

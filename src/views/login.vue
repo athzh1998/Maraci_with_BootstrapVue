@@ -1,10 +1,15 @@
 <template>
   <LoginAndSignUpLayout>
-    <div class="loginBG sectionHeight">
-      <b-row align-h="center">
-        <b-col md="6" class="loginFormBackground my-5 pb-5">
-          <b-row align-h="center">
-            <b-col md="8">
+    <div class="loginBG  position-relative">
+      <div class="col-lg-6 col-md-6 col-sm-10 loginFormBackground mx-auto py-4" style="margin: 0;
+  position: absolute;
+  top: 50%;
+  right:0;
+  left:0;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);">
+         <b-row align-h="center">
+            <b-col xs="10">
               <img
                 src="@/assets/img/logo.png"
                 alt="Maraci Logo"
@@ -306,8 +311,7 @@
               </div>
             </b-col>
           </b-row>
-        </b-col>
-      </b-row>
+      </div>
     </div>
   </LoginAndSignUpLayout>
 </template>

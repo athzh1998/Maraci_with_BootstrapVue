@@ -1,16 +1,16 @@
 <template>
   <DashBoardLayout>
     <b-container class="sectionsPadding">
-      <b-row class="pb-5" style="min-height: calc(100vh - 120px)">
-        <b-col lg="6"  class="pt-4">
+      <b-row align-h="center" >
+        <b-col lg="6" >
           <b-img
             src="@/assets/img/imgCover.png"
             alt="catogary 1 Header"
-            class="imgSize"
+            class="imgSize pt-5"
           >
           </b-img>
         </b-col>
-        <b-col lg="6">
+        <b-col lg="6" md="10">
           <section-header-tall></section-header-tall>
           <div class="py-lg-5">
             <h1>إستئجار يخت</h1>

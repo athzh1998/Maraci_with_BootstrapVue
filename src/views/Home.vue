@@ -20,7 +20,7 @@
                     overlay
                     class="zoomImg catogary"
                   >
-                    <div></div>
+                 
 
                     <div
                       class="darkenImageCatogary h-100"
@@ -117,18 +117,19 @@
         </b-container>
       </section>
 
-      <section class="grayBG sectionHeight">
+      <section class="grayBG" style="min-height: calc(70vh);">
         <b-container class="sectionsPadding">
           <section-header></section-header>
           <h1>المدونة</h1>
           <a class="showAllLinkInTheSectionHeader" href="/blogs">عرض الكل</a>
           <b-row align-h="center" align-v="center" class="py-5">
-            <b-col md="7" sm="12">
+            <b-col md="7">
               <b-img
                 :src="getImgUrl(this.blogs[4].blogImgSrc[0])"
                 fluid
                 alt="Blog image"
-                class="rounded-0"
+                class=" mr-3 mb-2"
+                style="border-radius:10px;"
               ></b-img>
             </b-col>
             <b-col md="5">
@@ -152,14 +153,27 @@
 
       <section class="sectionHeight">
         <div v-if="blogs.length" class="sectionsPadding">
-          <b-row align-h="center" class="py-5">
+          <b-row  class="py-5">
             <b-col
-              md="4"
+              lg="4"
+              md="6"
               class="pb-4"
-              v-for="blog in blogs.slice(0, 3)"
-              :key="blog.id"
+              v-for="(blog,index) in blogs.slice(0, 4)"
+              :key="index"
             >
               <blog-card
+                v-if="index!='3'"
+                :id="blog.id"
+                :blogTitle="blog.blogTitle"
+                :blogDatee="blog.blogDatee"
+                :blogText="blog.blogText"
+                :blogImgSrc="blog.blogImgSrc"
+              >
+              </blog-card>
+
+              <blog-card 
+                v-if="index=='3'"
+                class="d-lg-none"
                 :id="blog.id"
                 :blogTitle="blog.blogTitle"
                 :blogDatee="blog.blogDatee"
@@ -275,7 +289,7 @@ export default {
             }
             ,
           ],
-          blogImgSrc:["saif1.jpeg","saif2.jpeg","saif3.jpeg","saif4.jpeg","saif5.jpeg","saif6.jpeg","saif7.jpeg","saif8.jpeg"],
+          blogImgSrc:["saif7.jpeg","saif1.jpeg","saif2.jpeg","saif3.jpeg","saif4.jpeg","saif5.jpeg","saif6.jpeg","saif8.jpeg"],
         },
         {
           id: 3,
